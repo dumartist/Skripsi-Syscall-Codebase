@@ -1,0 +1,53 @@
+# Dataset mentah dan cache ekstraksi
+/archive-kaggle/
+/a-labelled-version-ADFA-LD/
+/LID-DS/
+/LID-DS_extracted/
+/Dafpus/
+*.zip
+
+# Data turunan, model, dan output eksperimen
+/prepared_data/
+/prepared_data_lidds/
+/adversarial_data/
+/adversarial_data_pre_fix/
+/models/
+/results/
+*.npz
+*.npy
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.log
+*.so
+
+# Artefak penulisan dan presentasi yang tidak termasuk codebase
+/docs/
+/poster/
+*.docx
+*.pptx
+*.pdf
+*.backup_*.txt
+~$*
+
+# Lingkungan lokal
+/.venv/
+/venv/
+/.env
+/.env.*
+!/.env.example
+/__pycache__/
+**/__pycache__/
+*.py[cod]
+/.pytest_cache/
+/.mypy_cache/
+/.ruff_cache/
+/.coverage
+/.tox/
+/build/
+/dist/
+*.egg-info/
+.DS_Store
+Thumbs.db

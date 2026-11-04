@@ -1,0 +1,12 @@
+# Eksperimen Python 3.12
+torch==2.11.0
+numpy==2.4.3
+scipy==1.17.1
+scikit-learn==1.8.0
+matplotlib==3.10.9
+
+# Ekspor model dan inferensi
+onnx==1.21.0
+onnxruntime==1.26.0
+
+# VM Linux: instal python3-bpfcc dari paket OS, bukan pip.
