@@ -14,8 +14,8 @@ per-event di daemon Python, lihat overhead_bench_v2.py).
 
 Jalankan di VM (butuh onnxruntime + model ONNX + deploy vocab):
   python3 deploy/benchmarks/pipeline_latency_bench.py \
-    --model /home/arthur/lidds_Bruteforce_CWE-307.onnx \
-    --vocab /home/arthur/lidds_deploy_vocab.json
+    --model models/lidds_Bruteforce_CWE-307.onnx \
+    --vocab /tmp/lidds_vocab.json
 
 Output: /tmp/pipeline_latency.json
 """

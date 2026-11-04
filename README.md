@@ -44,33 +44,16 @@ python3 -m syscall_hids.evaluation.adaptive_eval --seeds 42 123 456 789 1011 121
 python3 -m syscall_hids.diagnostics.analyze_corrected
 ```
 
-Untuk mengulang rangkaian eksperimen dari dataset mentah di Git Bash atau Linux:
+Untuk menjalankan eksperimen dari data olahan yang disertakan, gunakan lingkungan Python eksperimen dengan dependensi di `requirements.txt`:
 
 ```bash
 bash run_experiments.sh
 ```
 
-Rangkaian penuh memerlukan kedua dataset dan sumber daya komputasi yang besar. Skrip dapat menulis ulang file dalam `models/`, `prepared_data/`, `adversarial_data/`, dan `results/`.
+Jika ADFA-LD mentah tersimpan di lokasi lain, jalankan `ADFA_LD_ROOT=/lokasi/ADFA-LD bash run_experiments.sh`. Pilih direktori yang langsung berisi `Training_Data_Master`, `Validation_Data_Master`, dan `Attack_Data_Master`. Tanpa trace mentah, runner melewati pembuatan data, uji rasio injeksi, dan containment per proses. Untuk LID-DS, runner memakai rekaman mentah, cache ekstraksi, atau data olahan yang tersedia. Eksperimen melatih model dan dapat menulis ulang checkpoint dan hasil. Untuk deteksi langsung di VM, gunakan daemon pada bagian berikut.
 
 ## Prototipe HIPS
 
 `deploy/runtime/hips_daemon.py` menangkap syscall via eBPF, menjalankan inferensi ONNX, menentukan tindakan, dan dapat melakukan enforcement melalui signal userspace. Varian `hips_daemon_v2.py` menambahkan whitelist. Skrip di `deploy/validation/` menyediakan workload dan pemeriksaan no-op; `deploy/benchmarks/` mengukur overhead dan latensi.
 
-Untuk menjalankan deteksi di Linux x86_64, siapkan satu model ONNX dan vocabulary yang memetakan nomor syscall host ke token model. Daemon membaca event langsung dari eBPF. Contoh berikut memakai model LID-DS dalam mode dry run.
-
-```bash
-python3 deploy/runtime/build_deploy_vocab.py --native prepared_data_lidds/vocabulary_native.json --out /tmp/lidds_vocab.json
-sudo env PYTHONPATH=/path/to/venv/site-packages /usr/bin/python3 deploy/runtime/hips_daemon.py \
-  --model models/lidds_Bruteforce_CWE-307.onnx --vocab /tmp/lidds_vocab.json
-```
-
-## Git dan artefak biner
-
-Checkpoint dan data olahan berjumlah sekitar 140 MB. `.gitattributes` memakai Git LFS untuk file `.pt`, `.onnx`, `.npz`, dan `.pkl`. Sebelum melakukan commit atau setelah clone:
-
-```bash
-git lfs install
-git lfs pull
-```
-
-`.gitignore` hanya mengecualikan dataset mentah yang besar, file kerja lokal, artefak historis, dan dokumen lokal. Model, data olahan, serta hasil evaluasi sengaja disertakan dalam repositori ini.
+Untuk menjalankan deteksi di Linux x86_64, siapkan satu model ONNX dan vocabulary yang memetakan nomor syscall host ke token model. Daemon membaca event langsung dari eBPF. Aktifkan environment runtime yang berisi BCC, NumPy, dan ONNX Runtime. 

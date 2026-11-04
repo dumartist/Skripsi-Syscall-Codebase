@@ -10,15 +10,14 @@ Perubahan dari v1:
 
 Usage:
   # Dry-run (aman, log saja)
-  sudo PYTHONPATH=/usr/lib/python3/dist-packages:/home/arthur/venv_ubuntu/lib/python3.12/site-packages \
-    python3 deploy/runtime/hips_daemon_v2.py \
-    --model /home/arthur/a4_full.onnx \
-    --vocab /home/arthur/vocabulary.json
+  sudo "$(command -v python3)" deploy/runtime/hips_daemon_v2.py \
+    --model models/lidds_Bruteforce_CWE-307.onnx \
+    --vocab /tmp/lidds_vocab.json
 
   # Enforcement nyata (blokir proses)
-  sudo PYTHONPATH=... python3 deploy/runtime/hips_daemon_v2.py \
-    --model /home/arthur/a4_full.onnx \
-    --vocab /home/arthur/vocabulary.json \
+  sudo "$(command -v python3)" deploy/runtime/hips_daemon_v2.py \
+    --model models/lidds_Bruteforce_CWE-307.onnx \
+    --vocab /tmp/lidds_vocab.json \
     --enforce
 """
 
@@ -231,8 +230,8 @@ class PIDState:
 # ---------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model",   default="/home/arthur/a4_full.onnx")
-    parser.add_argument("--vocab",   default="/home/arthur/vocabulary.json")
+    parser.add_argument("--model",   default=str(Path(__file__).resolve().parents[2] / "models/a4_full.onnx"))
+    parser.add_argument("--vocab",   default=str(Path(__file__).resolve().parents[2] / "prepared_data/vocabulary.json"))
     parser.add_argument("--tau1",    type=float, default=0.30)
     parser.add_argument("--tau2",    type=float, default=0.60)
     parser.add_argument("--tau3",    type=float, default=0.85)

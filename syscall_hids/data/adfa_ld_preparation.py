@@ -15,6 +15,7 @@ Temporal split rationale:
 """
 
 import json
+import os
 import pickle
 from collections import Counter
 from pathlib import Path
@@ -24,7 +25,7 @@ import numpy as np
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DATA_ROOT = Path("archive-kaggle/ADFA-LD")
+DATA_ROOT = Path(os.environ.get("ADFA_LD_ROOT") or "archive-kaggle/ADFA-LD").expanduser()
 OUTPUT_DIR = Path("prepared_data")
 WINDOW_SIZE = 100
 STRIDE = 50
@@ -93,6 +94,10 @@ def trigram_distribution(traces, n=TRIGRAM_N):
 # Main
 # ---------------------------------------------------------------------------
 def main():
+    for partition in ("Training_Data_Master", "Validation_Data_Master", "Attack_Data_Master"):
+        if not (DATA_ROOT / partition).is_dir():
+            raise SystemExit(f"Partisi {partition} tidak ditemukan di {DATA_ROOT}. "
+                             "Atur ADFA_LD_ROOT ke direktori dataset mentah ADFA-LD.")
     np.random.seed(SEED)
     OUTPUT_DIR.mkdir(exist_ok=True)
 

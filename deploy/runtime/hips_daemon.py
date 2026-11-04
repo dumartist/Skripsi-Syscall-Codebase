@@ -7,8 +7,8 @@ Pipeline:
   → multi-tier policy π(r) → enforce (log/SIGSTOP/SIGKILL)
 
 Usage (root required for eBPF + enforcement):
-  sudo /root/venv_ubuntu/bin/python3 deploy/runtime/hips_daemon.py --model ~/a4_full.onnx \
-       --vocab ~/vocabulary.json --threshold 0.5
+  sudo "$(command -v python3)" deploy/runtime/hips_daemon.py --model models/lidds_Bruteforce_CWE-307.onnx \
+       --vocab /tmp/lidds_vocab.json
 
 Config flags:
   --window   W (default 100) — window size
@@ -205,8 +205,8 @@ class PIDState:
 # ---------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model",   default=str(Path.home()/"a4_full.onnx"))
-    parser.add_argument("--vocab",   default=str(Path.home()/"vocabulary.json"))
+    parser.add_argument("--model",   default=str(Path(__file__).resolve().parents[2] / "models/a4_full.onnx"))
+    parser.add_argument("--vocab",   default=str(Path(__file__).resolve().parents[2] / "prepared_data/vocabulary.json"))
     parser.add_argument("--window",  type=int,   default=100)
     parser.add_argument("--stride",  type=int,   default=50)
     parser.add_argument("--tau1",    type=float, default=0.30)

@@ -8,8 +8,8 @@ authoritative dari kernel header, lalu komposisikan dengan vocab native.
 
 Jalankan DI VM (butuh linux-headers terinstal):
   python3 deploy/runtime/build_deploy_vocab.py \
-    --native /home/arthur/vocabulary_native.json \
-    --out    /home/arthur/lidds_deploy_vocab.json
+    --native prepared_data_lidds/vocabulary_native.json \
+    --out    /tmp/lidds_vocab.json
 
 Output JSON kompatibel dengan hips_daemon_v2.py --vocab:
   {"<PAD>":0, "<UNK>":1, "<nr>": <native_token>, ...}

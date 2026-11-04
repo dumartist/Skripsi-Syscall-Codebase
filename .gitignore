@@ -11,12 +11,8 @@
 /results/figures/
 /results/appendix_*.json
 *.so
-
-# Artefak penulisan dan presentasi yang tidak termasuk codebase
 /docs/
-/poster/
 *.docx
-*.pptx
 *.pdf
 *.backup_*.txt
 ~$*

@@ -8,8 +8,7 @@ HILANG (lost) selama N detik. Jalankan SAMBIL membebani host untuk melihat drop
 di kondisi stres — mengkuantifikasi batas tahap capture (klaim host-level jujur).
 
 Jalankan (root, sistem BCC):
-  sudo PYTHONPATH=/usr/lib/python3/dist-packages:/home/arthur/venv_ubuntu/lib/python3.12/site-packages \
-    python3 deploy/capture/lost_events_probe.py --duration 30
+  sudo "$(command -v python3)" deploy/capture/lost_events_probe.py --duration 30
   # di terminal lain, beri beban: ( for i in $(seq 5); do find / -type f >/dev/null 2>&1; done )
 
 Output: /tmp/lost_events.json
