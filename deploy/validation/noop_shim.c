@@ -1,5 +1,5 @@
 /*
- * noop_shim.c — LD_PRELOAD shim untuk validasi fungsional ΦF (#4 / LEVEL 3).
+ * LD_PRELOAD shim untuk validasi fungsional injeksi syscall.
  *
  * Menyuntik no-op syscall NYATA (getpid, getuid, gettimeofday) ke dalam proses
  * serangan yang sedang berjalan, dengan mencegat connect() (Hydra membuka banyak

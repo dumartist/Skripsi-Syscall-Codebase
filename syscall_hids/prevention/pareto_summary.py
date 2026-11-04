@@ -1,4 +1,4 @@
-"""Multi-objective comparison for the model-choice discussion (examiner item 8).
+"""Multi-objective comparison for the model-choice discussion.
 Collects, per model, the objectives already measured elsewhere (no new experiment)
 and marks which models are Pareto-optimal (not dominated on every objective).
 Output: results/examiner/pareto.json

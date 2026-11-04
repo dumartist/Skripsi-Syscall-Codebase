@@ -1,8 +1,7 @@
 """
 Corrected training/eval pipeline + canonicalization probe (Path A, steps 2-4).
 
-Fixes the four defects flagged in review, in a self-contained harness so the
-preliminary gate can be answered before touching baselines_ablation.py:
+Training and evaluation protocol:
 
   #1  True no-defense B0 — vanilla CNN on CLEAN data only (no adversarial
       augmentation). The old "B3 vanilla" was trained with adv windows.
@@ -26,7 +25,7 @@ pipeline (canon applied in forward).
 
 Output: results/corrected_preliminary.json
 
-NOTE: single-/few-seed PRELIMINARY numbers. NOT for pasting into the thesis.
+Runs with few seeds give preliminary estimates.
 """
 
 import argparse

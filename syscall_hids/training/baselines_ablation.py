@@ -1,5 +1,5 @@
 """
-Baselines & Ablation Experiments for Thesis Paper
+Baselines & Ablation Experiments
 
 Runs baseline comparisons and ablation studies across multiple seeds.
 Produces results/baselines_report.json and results/ablation_report.json.
@@ -13,8 +13,7 @@ had three method defects (unpaired L_robust, test-set checkpoint selection, and 
 Baselines:
   B1 — N-gram TF-IDF + Random Forest / SVM (classical)
   B2 — LSTM encoder, L_cls only (neural, no defense)
-  B3 — Multi-Scale CNN, L_cls only, CLEAN data only (true no-defense baseline = B0 in
-       the thesis; same arch as the full model) [= Ablation A1]
+  B3 — Multi-Scale CNN, L_cls only, CLEAN data only (true no-defense baseline B0, same arch as the full model) [= Ablation A1]
 
 Ablations (same CNN architecture, different loss components; no adv-as-labeled data —
 adversarial windows are used only as paired targets for L_robust):
@@ -314,7 +313,7 @@ def _corrected_data():
 def train_neural_model(model_class, model_kwargs, data, alpha=0.0, beta=0.0,
                        use_adv_train=False, seed=42, tag="model"):
     """[CORRECTED] Delegates to corrected_pipeline.train_corrected so this ablation
-    runner reproduces the thesis's corrected results EXACTLY. Corrections vs. the
+    runner uses the same training and validation splits. Changes from the
     original in-place trainer (which had three method defects): (1) L_robust is a
     paired TRADES KL between each clean-malicious window and its own adversarial
     version (not two unrelated slices of a shuffled batch); (2) the best checkpoint

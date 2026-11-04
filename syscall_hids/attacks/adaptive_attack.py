@@ -1,5 +1,5 @@
 """
-#3 (LEVEL 2): Adaptive White-box Attacker — uji "Tahan Adversarial" sebenarnya.
+Adaptive white-box attack on syscall sequences.
 
 Mimikri statis (adversarial_mimicry.py) menyuntik no-op SEKALI lalu defender
 dilatih sesudahnya — itu data augmentation berlabel musuh, bukan robustness dalam

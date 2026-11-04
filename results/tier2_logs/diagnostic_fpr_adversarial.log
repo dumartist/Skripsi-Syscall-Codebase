@@ -1,0 +1,24 @@
+======================================================================
+Diagnostic A3: FPR pada Kondisi Adversarial (benign + no-op)
+Device: cuda
+======================================================================
+
+Benign test: 35680 window
+Perturbasi dibangkitkan untuk rasio: [0.05, 0.1, 0.3]
+
+  Model                FPR-clean   FPR@5%  FPR@10%  FPR@30%    max-d  Verdict
+  ------------------------------------------------------------------------------
+  B3_vanilla_cnn          0.1452   0.1831   0.2197   0.4087  +0.2635  OVERSPECIFIC
+  A4_full                 0.1456   0.1648   0.1800   0.2347  +0.0891  OVERSPECIFIC
+
+  Saved: results/diagnostic_a3_fpr_adversarial.json
+
+======================================================================
+INTERPRETASI:
+  B3_vanilla_cnn: FPR 0.1452 (clean) -> 0.4087 (30% no-op), delta=+0.2635 [OVERSPECIFIC]
+  A4_full: FPR 0.1456 (clean) -> 0.2347 (30% no-op), delta=+0.0891 [OVERSPECIFIC]
+
+  Jika FPR naik dengan injeksi no-op pada benign, model terbukti
+  overspecific terhadap artefak injeksi — konsisten dengan A1/A2:
+  model mendeteksi 'sekuens termodifikasi', bukan 'maliciousness'.
+======================================================================

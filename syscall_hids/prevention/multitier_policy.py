@@ -1,8 +1,7 @@
 """
-Section 4.4.2: Multi-Tier Action Mapping (B1)
+Multi-Tier Action Mapping (B1)
 
-Mengimplementasikan fungsi kebijakan berjenjang pi(r) yang didefinisikan
-pada Section 2.2.5 namun belum diuji di BAB IV:
+Mengimplementasikan fungsi kebijakan berjenjang pi(r) untuk memetakan skor risiko ke tindakan:
 
     pi(r) = Normal     jika r < tau1
             Alert      jika tau1 <= r < tau2
@@ -20,8 +19,6 @@ Tiga profil biaya disimulasikan: Balanced, Low-Disruption (gangguan benign
 mahal), Zero-Tolerance (serangan terlewat sangat mahal).
 
 Output: results/multitier_policy_report.json
-Thesis : Tabel 4.16 (optimal thresholds), 4.17 (vs single-threshold),
-         confusion matrix 4x2.
 """
 
 import json
@@ -136,7 +133,7 @@ def grid_search_single(probs, labels, cmat, prior):
 def main():
     torch.manual_seed(SEED); np.random.seed(SEED)
     print("=" * 70)
-    print("Section 4.4.2: Multi-Tier Action Mapping (B1)")
+    print("Multi-Tier Action Mapping (B1)")
     print(f"Device: {DEVICE} | Model: {MODEL_TAG}")
     print("=" * 70)
 

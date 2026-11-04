@@ -1,5 +1,5 @@
 """
-LID-DS Step 5: Fine-tune Transfer Evaluation (Section 4.5.4)
+LID-DS Step 5: Fine-tune Transfer Evaluation
 
 Model A4 ADFA dijadikan titik awal: blok konvolusi (ekstraktor pola lokal
 yang dipelajari dari ADFA) DIBEKUKAN, sementara embedding + representation
@@ -129,7 +129,7 @@ def main():
         json.dump(report, f, indent=2, default=float)
 
     print("\n" + "=" * 64)
-    print("Ringkasan Fine-tune (Section 4.5.4):")
+    print("Ringkasan Fine-tune:")
     print(f"  {'Skenario':<24}{'Recall':>8}{'FPR':>8}{'F1':>8}{'AUC':>8}{'AUPRC':>8}")
     print("  " + "-" * 64)
     for scn, r in report["scenarios"].items():

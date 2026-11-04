@@ -1,0 +1,50 @@
+{
+  "model": "A4_full_seed42",
+  "n_params": 106658,
+  "config": {
+    "n_iter": 10000,
+    "batch": 256,
+    "max_len": 130
+  },
+  "devices": {
+    "cpu": {
+      "batch1": {
+        "forward_us": 323.6358400026802,
+        "softmax_us": 4.795799998100847,
+        "policy_us": 2.841580001404509,
+        "total_us": 331.27322000218555,
+        "throughput_wps": 3018.6563223957633
+      },
+      "batch256_per_sample": {
+        "forward_us": 63.61684570265425,
+        "softmax_us": 0.03991796859281749,
+        "policy_us": 0.014550781202160579,
+        "total_us": 63.671314452449224,
+        "throughput_wps": 15705.659740177287
+      }
+    },
+    "cuda": {
+      "batch1": {
+        "forward_us": 618.3566500025336,
+        "softmax_us": 15.876740001840517,
+        "policy_us": 1.911850000033155,
+        "total_us": 636.1452400044072,
+        "throughput_wps": 1571.9680618738448
+      },
+      "batch256_per_sample": {
+        "forward_us": 6.371318359015277,
+        "softmax_us": 0.041828125176834874,
+        "policy_us": 0.010402343946225301,
+        "total_us": 6.423548828138337,
+        "throughput_wps": 155677.18511292434
+      }
+    }
+  },
+  "tokenization_us_per_window": 7.786710001528263,
+  "feasibility": {
+    "windows_per_syscall": 0.02,
+    "best_device": "cuda",
+    "throughput_batch1_wps": 1571.9680618738448,
+    "throughput_batch256_wps": 155677.18511292434
+  }
+}

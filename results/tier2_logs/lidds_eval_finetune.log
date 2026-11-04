@@ -1,0 +1,36 @@
+================================================================
+LID-DS Step 5: Fine-tune Transfer (ADFA -> LID-DS, conv frozen)
+Device: cuda
+================================================================
+
+[CVE-2014-0160] fine-tuning...
+    epoch  1: val_F1=0.0826 val_AUC=0.3376
+    epoch  5: val_F1=0.0906 val_AUC=0.4158
+    epoch 10: val_F1=0.0903 val_AUC=0.5038
+    epoch 15: val_F1=0.0903 val_AUC=0.5559
+  TEST: Recall=0.0668 FPR=0.0345 F1=0.0479 AUC=0.5365 AUPRC=0.0243
+
+[Bruteforce_CWE-307] fine-tuning...
+    epoch  1: val_F1=0.7765 val_AUC=0.8459
+    epoch  5: val_F1=0.7944 val_AUC=0.8542
+    epoch 10: val_F1=0.8069 val_AUC=0.8552
+    epoch 15: val_F1=0.8120 val_AUC=0.8569
+  TEST: Recall=0.7462 FPR=0.0005 F1=0.8520 AUC=0.8877 AUPRC=0.8121
+
+[CWE-89-SQL-injection] fine-tuning...
+    epoch  1: val_F1=0.5867 val_AUC=0.7618
+    epoch  5: val_F1=0.6395 val_AUC=0.7940
+    epoch 10: val_F1=0.6385 val_AUC=0.8012
+    epoch 15: val_F1=0.6496 val_AUC=0.8064
+  TEST: Recall=0.5741 FPR=0.1428 F1=0.3320 AUC=0.7758 AUPRC=0.4742
+
+================================================================
+Ringkasan Fine-tune (Section 4.5.4):
+  Skenario                  Recall     FPR      F1     AUC   AUPRC
+  ----------------------------------------------------------------
+  CVE-2014-0160              0.067   0.034   0.048   0.537   0.024
+  Bruteforce_CWE-307         0.746   0.000   0.852   0.888   0.812
+  CWE-89-SQL-injection       0.574   0.143   0.332   0.776   0.474
+
+  Saved: results/lidds_finetune_report.json
+================================================================

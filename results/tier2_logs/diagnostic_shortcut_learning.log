@@ -1,0 +1,70 @@
+======================================================================
+Diagnostic A1: Shortcut Learning Test
+Device: cuda
+======================================================================
+
+[1/4] Loading test data...
+  Clean test: 38345 samples (35680 benign + 2665 malicious)
+  Adversarial distribution_aware: 2665 samples (all malicious)
+  Adversarial random: 2665 samples (all malicious)
+  Adversarial position_aware: 2665 samples (all malicious)
+
+[2/4] Running inference for all model+seed combinations...
+  Evaluating B3_vanilla_cnn_seed42... clean F1=0.4812  AdvRec(DA)=0.9111
+  Evaluating B3_vanilla_cnn_seed123... clean F1=0.4609  AdvRec(DA)=0.9347
+  Evaluating B3_vanilla_cnn_seed456... clean F1=0.4691  AdvRec(DA)=0.9542
+  Evaluating B3_vanilla_cnn_seed789... clean F1=0.4690  AdvRec(DA)=0.9407
+  Evaluating B3_vanilla_cnn_seed1011... clean F1=0.4677  AdvRec(DA)=0.9377
+  Evaluating B3_vanilla_cnn_seed1213... clean F1=0.4699  AdvRec(DA)=0.9490
+  Evaluating B3_vanilla_cnn_seed1415... clean F1=0.4623  AdvRec(DA)=0.9614
+  Evaluating B3_vanilla_cnn_seed1617... clean F1=0.4328  AdvRec(DA)=0.9508
+  Evaluating B3_vanilla_cnn_seed1819... clean F1=0.4785  AdvRec(DA)=0.9445
+  Evaluating B3_vanilla_cnn_seed2021... clean F1=0.4772  AdvRec(DA)=0.9505
+  Evaluating A2_cls_robust_seed42... clean F1=0.4816  AdvRec(DA)=0.9426
+  Evaluating A2_cls_robust_seed123... clean F1=0.4611  AdvRec(DA)=0.9535
+  Evaluating A2_cls_robust_seed456... clean F1=0.4710  AdvRec(DA)=0.9621
+  Evaluating A2_cls_robust_seed789... clean F1=0.4680  AdvRec(DA)=0.9632
+  Evaluating A2_cls_robust_seed1011... clean F1=0.4712  AdvRec(DA)=0.9430
+  Evaluating A2_cls_robust_seed1213... clean F1=0.4726  AdvRec(DA)=0.9568
+  Evaluating A2_cls_robust_seed1415... clean F1=0.4756  AdvRec(DA)=0.9625
+  Evaluating A2_cls_robust_seed1617... clean F1=0.4422  AdvRec(DA)=0.9617
+  Evaluating A2_cls_robust_seed1819... clean F1=0.4684  AdvRec(DA)=0.9644
+  Evaluating A2_cls_robust_seed2021... clean F1=0.4784  AdvRec(DA)=0.9598
+  Evaluating A3_cls_contrastive_seed42... clean F1=0.4820  AdvRec(DA)=0.9133
+  Evaluating A3_cls_contrastive_seed123... clean F1=0.4629  AdvRec(DA)=0.9156
+  Evaluating A3_cls_contrastive_seed456... clean F1=0.4833  AdvRec(DA)=0.9426
+  Evaluating A3_cls_contrastive_seed789... clean F1=0.4713  AdvRec(DA)=0.9418
+  Evaluating A3_cls_contrastive_seed1011... clean F1=0.4799  AdvRec(DA)=0.9276
+  Evaluating A3_cls_contrastive_seed1213... clean F1=0.4764  AdvRec(DA)=0.9460
+  Evaluating A3_cls_contrastive_seed1415... clean F1=0.4723  AdvRec(DA)=0.9445
+  Evaluating A3_cls_contrastive_seed1617... clean F1=0.4461  AdvRec(DA)=0.9501
+  Evaluating A3_cls_contrastive_seed1819... clean F1=0.4740  AdvRec(DA)=0.9508
+  Evaluating A3_cls_contrastive_seed2021... clean F1=0.4811  AdvRec(DA)=0.9385
+  Evaluating A4_full_seed42... clean F1=0.4823  AdvRec(DA)=0.9377
+  Evaluating A4_full_seed123... clean F1=0.4605  AdvRec(DA)=0.9580
+  Evaluating A4_full_seed456... clean F1=0.4757  AdvRec(DA)=0.9606
+  Evaluating A4_full_seed789... clean F1=0.4739  AdvRec(DA)=0.9591
+  Evaluating A4_full_seed1011... clean F1=0.4746  AdvRec(DA)=0.9463
+  Evaluating A4_full_seed1213... clean F1=0.4754  AdvRec(DA)=0.9516
+  Evaluating A4_full_seed1415... clean F1=0.4666  AdvRec(DA)=0.9576
+  Evaluating A4_full_seed1617... clean F1=0.4412  AdvRec(DA)=0.9553
+  Evaluating A4_full_seed1819... clean F1=0.4769  AdvRec(DA)=0.9640
+  Evaluating A4_full_seed2021... clean F1=0.4793  AdvRec(DA)=0.9591
+
+[3/4] Paired statistical tests (A4 vs B3, 10 seeds)...
+
+  Strategy                Mean Diff   Std Diff   t-test p   Wilcoxon p    Cohen d  Verdict
+  ---------------------------------------------------------------------------------------------------
+  distribution_aware        +0.0115     0.0099     0.0052       0.0059    +1.1597  SHORTCUT_DOMINANT
+  random                    -0.0186     0.0047     0.0000       0.0020    -3.9678  SHORTCUT_DOMINANT
+  position_aware            -0.0099     0.0046     0.0001       0.0020    -2.1698  SHORTCUT_DOMINANT
+
+[4/4] Saving report...
+  Saved: results\diagnostic_a1_shortcut.json
+
+======================================================================
+OVERALL VERDICT (Distribution-Aware): SHORTCUT_DOMINANT
+======================================================================
+
+[1] Gap A4 - B3 sangat kecil (< 2pp). Sebagian besar adversarial robustness berasal dari arsitektur CNN multi-skala, bukan dari L_robust + L_contrastive. Klaim 'mimicry attacks justru meningkatkan deteksi karena adversarial training' di Section 4.5.1 perlu di-tone-down.
+

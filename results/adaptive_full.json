@@ -1,0 +1,1228 @@
+{
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1011,
+    1213,
+    1415,
+    1617,
+    1819,
+    2021
+  ],
+  "n_traces": 200,
+  "population": "malicious test windows detected by ALL pipelines on clean input; one window per trace; identical across pipelines",
+  "sample_info": {
+    "42": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2424,
+      "n_detected_by_all_traces": 342,
+      "n_attacked_traces": 200
+    },
+    "123": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2437,
+      "n_detected_by_all_traces": 345,
+      "n_attacked_traces": 200
+    },
+    "456": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2447,
+      "n_detected_by_all_traces": 345,
+      "n_attacked_traces": 200
+    },
+    "789": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2438,
+      "n_detected_by_all_traces": 342,
+      "n_attacked_traces": 200
+    },
+    "1011": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2401,
+      "n_detected_by_all_traces": 341,
+      "n_attacked_traces": 200
+    },
+    "1213": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2442,
+      "n_detected_by_all_traces": 343,
+      "n_attacked_traces": 200
+    },
+    "1415": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2440,
+      "n_detected_by_all_traces": 341,
+      "n_attacked_traces": 200
+    },
+    "1617": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2443,
+      "n_detected_by_all_traces": 343,
+      "n_attacked_traces": 200
+    },
+    "1819": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2426,
+      "n_detected_by_all_traces": 340,
+      "n_attacked_traces": 200
+    },
+    "2021": {
+      "n_malicious_windows": 2665,
+      "n_malicious_traces": 390,
+      "n_detected_by_all_windows": 2434,
+      "n_detected_by_all_traces": 343,
+      "n_attacked_traces": 200
+    }
+  },
+  "runs": {
+    "C_B0_vanilla": [
+      {
+        "recall_clean_full_test": 0.9328330206378986,
+        "n_attacked": 200,
+        "evasion_final": 0.845,
+        "evasion_le_10pct": 0.43,
+        "post_attack_recall_est_le_10pct": 0.5317148217636023,
+        "evasion_le_20pct": 0.755,
+        "post_attack_recall_est_le_20pct": 0.22854409005628515,
+        "evasion_le_30pct": 0.845,
+        "post_attack_recall_est_le_30pct": 0.14458911819887432
+      },
+      {
+        "recall_clean_full_test": 0.949343339587242,
+        "n_attacked": 200,
+        "evasion_final": 0.86,
+        "evasion_le_10pct": 0.515,
+        "post_attack_recall_est_le_10pct": 0.4604315196998124,
+        "evasion_le_20pct": 0.77,
+        "post_attack_recall_est_le_20pct": 0.21834896810506566,
+        "evasion_le_30pct": 0.86,
+        "post_attack_recall_est_le_30pct": 0.1329080675422139
+      },
+      {
+        "recall_clean_full_test": 0.9587242026266416,
+        "n_attacked": 200,
+        "evasion_final": 0.87,
+        "evasion_le_10pct": 0.375,
+        "post_attack_recall_est_le_10pct": 0.599202626641651,
+        "evasion_le_20pct": 0.715,
+        "post_attack_recall_est_le_20pct": 0.2732363977485929,
+        "evasion_le_30pct": 0.87,
+        "post_attack_recall_est_le_30pct": 0.12463414634146341
+      },
+      {
+        "recall_clean_full_test": 0.9553470919324578,
+        "n_attacked": 200,
+        "evasion_final": 0.88,
+        "evasion_le_10pct": 0.49,
+        "post_attack_recall_est_le_10pct": 0.4872270168855535,
+        "evasion_le_20pct": 0.745,
+        "post_attack_recall_est_le_20pct": 0.24361350844277674,
+        "evasion_le_30pct": 0.88,
+        "post_attack_recall_est_le_30pct": 0.11464165103189493
+      },
+      {
+        "recall_clean_full_test": 0.9332082551594747,
+        "n_attacked": 200,
+        "evasion_final": 0.83,
+        "evasion_le_10pct": 0.44,
+        "post_attack_recall_est_le_10pct": 0.5225966228893059,
+        "evasion_le_20pct": 0.735,
+        "post_attack_recall_est_le_20pct": 0.2473001876172608,
+        "evasion_le_30pct": 0.83,
+        "post_attack_recall_est_le_30pct": 0.15864540337711075
+      },
+      {
+        "recall_clean_full_test": 0.9523452157598499,
+        "n_attacked": 200,
+        "evasion_final": 0.91,
+        "evasion_le_10pct": 0.475,
+        "post_attack_recall_est_le_10pct": 0.4999812382739212,
+        "evasion_le_20pct": 0.75,
+        "post_attack_recall_est_le_20pct": 0.23808630393996247,
+        "evasion_le_30pct": 0.91,
+        "post_attack_recall_est_le_30pct": 0.08571106941838647
+      },
+      {
+        "recall_clean_full_test": 0.9639774859287055,
+        "n_attacked": 200,
+        "evasion_final": 0.905,
+        "evasion_le_10pct": 0.48,
+        "post_attack_recall_est_le_10pct": 0.5012682926829268,
+        "evasion_le_20pct": 0.795,
+        "post_attack_recall_est_le_20pct": 0.19761538461538458,
+        "evasion_le_30pct": 0.905,
+        "post_attack_recall_est_le_30pct": 0.091577861163227
+      },
+      {
+        "recall_clean_full_test": 0.9474671669793621,
+        "n_attacked": 200,
+        "evasion_final": 0.775,
+        "evasion_le_10pct": 0.4,
+        "post_attack_recall_est_le_10pct": 0.5684803001876172,
+        "evasion_le_20pct": 0.64,
+        "post_attack_recall_est_le_20pct": 0.3410881801125703,
+        "evasion_le_30pct": 0.775,
+        "post_attack_recall_est_le_30pct": 0.21318011257035643
+      },
+      {
+        "recall_clean_full_test": 0.9602251407129456,
+        "n_attacked": 200,
+        "evasion_final": 0.85,
+        "evasion_le_10pct": 0.515,
+        "post_attack_recall_est_le_10pct": 0.46570919324577864,
+        "evasion_le_20pct": 0.775,
+        "post_attack_recall_est_le_20pct": 0.21605065666041273,
+        "evasion_le_30pct": 0.85,
+        "post_attack_recall_est_le_30pct": 0.14403377110694188
+      },
+      {
+        "recall_clean_full_test": 0.9572232645403377,
+        "n_attacked": 200,
+        "evasion_final": 0.85,
+        "evasion_le_10pct": 0.43,
+        "post_attack_recall_est_le_10pct": 0.5456172607879926,
+        "evasion_le_20pct": 0.755,
+        "post_attack_recall_est_le_20pct": 0.23451969981238271,
+        "evasion_le_30pct": 0.85,
+        "post_attack_recall_est_le_30pct": 0.14358348968105067
+      }
+    ],
+    "C_B0_sym": [
+      {
+        "recall_clean_full_test": 0.9474671669793621,
+        "n_attacked": 200,
+        "evasion_final": 0.835,
+        "evasion_le_10pct": 0.415,
+        "post_attack_recall_est_le_10pct": 0.5542682926829268,
+        "evasion_le_20pct": 0.575,
+        "post_attack_recall_est_le_20pct": 0.4026735459662289,
+        "evasion_le_30pct": 0.835,
+        "post_attack_recall_est_le_30pct": 0.15633208255159478
+      },
+      {
+        "recall_clean_full_test": 0.9459662288930581,
+        "n_attacked": 200,
+        "evasion_final": 0.88,
+        "evasion_le_10pct": 0.42,
+        "post_attack_recall_est_le_10pct": 0.5486604127579738,
+        "evasion_le_20pct": 0.705,
+        "post_attack_recall_est_le_20pct": 0.2790600375234522,
+        "evasion_le_30pct": 0.88,
+        "post_attack_recall_est_le_30pct": 0.11351594746716698
+      },
+      {
+        "recall_clean_full_test": 0.9594746716697936,
+        "n_attacked": 200,
+        "evasion_final": 0.89,
+        "evasion_le_10pct": 0.415,
+        "post_attack_recall_est_le_10pct": 0.5612926829268292,
+        "evasion_le_20pct": 0.725,
+        "post_attack_recall_est_le_20pct": 0.26385553470919326,
+        "evasion_le_30pct": 0.89,
+        "post_attack_recall_est_le_30pct": 0.10554221388367728
+      },
+      {
+        "recall_clean_full_test": 0.949718574108818,
+        "n_attacked": 200,
+        "evasion_final": 0.91,
+        "evasion_le_10pct": 0.46,
+        "post_attack_recall_est_le_10pct": 0.5128480300187618,
+        "evasion_le_20pct": 0.735,
+        "post_attack_recall_est_le_20pct": 0.25167542213883676,
+        "evasion_le_30pct": 0.91,
+        "post_attack_recall_est_le_30pct": 0.08547467166979358
+      },
+      {
+        "recall_clean_full_test": 0.9399624765478424,
+        "n_attacked": 200,
+        "evasion_final": 0.96,
+        "evasion_le_10pct": 0.42,
+        "post_attack_recall_est_le_10pct": 0.5451782363977487,
+        "evasion_le_20pct": 0.8,
+        "post_attack_recall_est_le_20pct": 0.18799249530956844,
+        "evasion_le_30pct": 0.96,
+        "post_attack_recall_est_le_30pct": 0.03759849906191373
+      },
+      {
+        "recall_clean_full_test": 0.9594746716697936,
+        "n_attacked": 200,
+        "evasion_final": 0.885,
+        "evasion_le_10pct": 0.395,
+        "post_attack_recall_est_le_10pct": 0.5804821763602251,
+        "evasion_le_20pct": 0.69,
+        "post_attack_recall_est_le_20pct": 0.29743714821763606,
+        "evasion_le_30pct": 0.885,
+        "post_attack_recall_est_le_30pct": 0.11033958724202626
+      },
+      {
+        "recall_clean_full_test": 0.9512195121951219,
+        "n_attacked": 200,
+        "evasion_final": 0.99,
+        "evasion_le_10pct": 0.53,
+        "post_attack_recall_est_le_10pct": 0.44707317073170727,
+        "evasion_le_20pct": 0.895,
+        "post_attack_recall_est_le_20pct": 0.09987804878048778,
+        "evasion_le_30pct": 0.99,
+        "post_attack_recall_est_le_30pct": 0.009512195121951228
+      },
+      {
+        "recall_clean_full_test": 0.9583489681050656,
+        "n_attacked": 200,
+        "evasion_final": 0.96,
+        "evasion_le_10pct": 0.44,
+        "post_attack_recall_est_le_10pct": 0.5366754221388368,
+        "evasion_le_20pct": 0.74,
+        "post_attack_recall_est_le_20pct": 0.24917073170731707,
+        "evasion_le_30pct": 0.96,
+        "post_attack_recall_est_le_30pct": 0.03833395872420266
+      },
+      {
+        "recall_clean_full_test": 0.9606003752345216,
+        "n_attacked": 200,
+        "evasion_final": 0.81,
+        "evasion_le_10pct": 0.38,
+        "post_attack_recall_est_le_10pct": 0.5955722326454034,
+        "evasion_le_20pct": 0.61,
+        "post_attack_recall_est_le_20pct": 0.3746341463414634,
+        "evasion_le_30pct": 0.81,
+        "post_attack_recall_est_le_30pct": 0.18251407129455904
+      },
+      {
+        "recall_clean_full_test": 0.951594746716698,
+        "n_attacked": 200,
+        "evasion_final": 0.935,
+        "evasion_le_10pct": 0.46,
+        "post_attack_recall_est_le_10pct": 0.5138611632270169,
+        "evasion_le_20pct": 0.765,
+        "post_attack_recall_est_le_20pct": 0.223624765478424,
+        "evasion_le_30pct": 0.935,
+        "post_attack_recall_est_le_30pct": 0.06185365853658532
+      }
+    ],
+    "C_AT_augment": [
+      {
+        "recall_clean_full_test": 0.9347091932457786,
+        "n_attacked": 200,
+        "evasion_final": 0.935,
+        "evasion_le_10pct": 0.45,
+        "post_attack_recall_est_le_10pct": 0.5140900562851782,
+        "evasion_le_20pct": 0.84,
+        "post_attack_recall_est_le_20pct": 0.1495534709193246,
+        "evasion_le_30pct": 0.935,
+        "post_attack_recall_est_le_30pct": 0.06075609756097556
+      },
+      {
+        "recall_clean_full_test": 0.9339587242026266,
+        "n_attacked": 200,
+        "evasion_final": 0.97,
+        "evasion_le_10pct": 0.695,
+        "post_attack_recall_est_le_10pct": 0.28485741088180117,
+        "evasion_le_20pct": 0.935,
+        "post_attack_recall_est_le_20pct": 0.06070731707317068,
+        "evasion_le_30pct": 0.97,
+        "post_attack_recall_est_le_30pct": 0.02801876172607882
+      },
+      {
+        "recall_clean_full_test": 0.9478424015009381,
+        "n_attacked": 200,
+        "evasion_final": 0.985,
+        "evasion_le_10pct": 0.65,
+        "post_attack_recall_est_le_10pct": 0.3317448405253283,
+        "evasion_le_20pct": 0.945,
+        "post_attack_recall_est_le_20pct": 0.05213133208255164,
+        "evasion_le_30pct": 0.985,
+        "post_attack_recall_est_le_30pct": 0.014217636022514085
+      },
+      {
+        "recall_clean_full_test": 0.9403377110694184,
+        "n_attacked": 200,
+        "evasion_final": 0.975,
+        "evasion_le_10pct": 0.63,
+        "post_attack_recall_est_le_10pct": 0.34792495309568483,
+        "evasion_le_20pct": 0.92,
+        "post_attack_recall_est_le_20pct": 0.07522701688555344,
+        "evasion_le_30pct": 0.975,
+        "post_attack_recall_est_le_30pct": 0.023508442776735482
+      },
+      {
+        "recall_clean_full_test": 0.9305816135084428,
+        "n_attacked": 200,
+        "evasion_final": 0.99,
+        "evasion_le_10pct": 0.655,
+        "post_attack_recall_est_le_10pct": 0.32105065666041277,
+        "evasion_le_20pct": 0.95,
+        "post_attack_recall_est_le_20pct": 0.046529080675422184,
+        "evasion_le_30pct": 0.99,
+        "post_attack_recall_est_le_30pct": 0.009305816135084436
+      },
+      {
+        "recall_clean_full_test": 0.9369606003752345,
+        "n_attacked": 200,
+        "evasion_final": 0.985,
+        "evasion_le_10pct": 0.605,
+        "post_attack_recall_est_le_10pct": 0.37009943714821764,
+        "evasion_le_20pct": 0.93,
+        "post_attack_recall_est_le_20pct": 0.06558724202626637,
+        "evasion_le_30pct": 0.985,
+        "post_attack_recall_est_le_30pct": 0.014054409005628531
+      },
+      {
+        "recall_clean_full_test": 0.9422138836772983,
+        "n_attacked": 200,
+        "evasion_final": 0.995,
+        "evasion_le_10pct": 0.775,
+        "post_attack_recall_est_le_10pct": 0.2119981238273921,
+        "evasion_le_20pct": 0.98,
+        "post_attack_recall_est_le_20pct": 0.018844277673545982,
+        "evasion_le_30pct": 0.995,
+        "post_attack_recall_est_le_30pct": 0.004711069418386496
+      },
+      {
+        "recall_clean_full_test": 0.9418386491557224,
+        "n_attacked": 200,
+        "evasion_final": 0.93,
+        "evasion_le_10pct": 0.56,
+        "post_attack_recall_est_le_10pct": 0.4144090056285178,
+        "evasion_le_20pct": 0.88,
+        "post_attack_recall_est_le_20pct": 0.11302063789868667,
+        "evasion_le_30pct": 0.93,
+        "post_attack_recall_est_le_30pct": 0.06592870544090051
+      },
+      {
+        "recall_clean_full_test": 0.9433395872420263,
+        "n_attacked": 200,
+        "evasion_final": 0.91,
+        "evasion_le_10pct": 0.455,
+        "post_attack_recall_est_le_10pct": 0.5141200750469043,
+        "evasion_le_20pct": 0.8,
+        "post_attack_recall_est_le_20pct": 0.18866791744840522,
+        "evasion_le_30pct": 0.91,
+        "post_attack_recall_est_le_30pct": 0.08490056285178234
+      },
+      {
+        "recall_clean_full_test": 0.9448405253283302,
+        "n_attacked": 200,
+        "evasion_final": 0.955,
+        "evasion_le_10pct": 0.54,
+        "post_attack_recall_est_le_10pct": 0.4346266416510319,
+        "evasion_le_20pct": 0.87,
+        "post_attack_recall_est_le_20pct": 0.12282926829268292,
+        "evasion_le_30pct": 0.955,
+        "post_attack_recall_est_le_30pct": 0.042517823639774896
+      }
+    ],
+    "C_A2_pairedKL": [
+      {
+        "recall_clean_full_test": 0.9369606003752345,
+        "n_attacked": 200,
+        "evasion_final": 0.76,
+        "evasion_le_10pct": 0.38,
+        "post_attack_recall_est_le_10pct": 0.5809155722326454,
+        "evasion_le_20pct": 0.57,
+        "post_attack_recall_est_le_20pct": 0.4028930581613509,
+        "evasion_le_30pct": 0.76,
+        "post_attack_recall_est_le_30pct": 0.22487054409005627
+      },
+      {
+        "recall_clean_full_test": 0.951594746716698,
+        "n_attacked": 200,
+        "evasion_final": 0.76,
+        "evasion_le_10pct": 0.38,
+        "post_attack_recall_est_le_10pct": 0.5899887429643528,
+        "evasion_le_20pct": 0.6,
+        "post_attack_recall_est_le_20pct": 0.3806378986866792,
+        "evasion_le_30pct": 0.76,
+        "post_attack_recall_est_le_30pct": 0.2283827392120075
+      },
+      {
+        "recall_clean_full_test": 0.9583489681050656,
+        "n_attacked": 200,
+        "evasion_final": 0.8,
+        "evasion_le_10pct": 0.355,
+        "post_attack_recall_est_le_10pct": 0.6181350844277673,
+        "evasion_le_20pct": 0.59,
+        "post_attack_recall_est_le_20pct": 0.39292307692307693,
+        "evasion_le_30pct": 0.8,
+        "post_attack_recall_est_le_30pct": 0.19166979362101308
+      },
+      {
+        "recall_clean_full_test": 0.9575984990619137,
+        "n_attacked": 200,
+        "evasion_final": 0.78,
+        "evasion_le_10pct": 0.36,
+        "post_attack_recall_est_le_10pct": 0.6128630393996248,
+        "evasion_le_20pct": 0.61,
+        "post_attack_recall_est_le_20pct": 0.3734634146341464,
+        "evasion_le_30pct": 0.78,
+        "post_attack_recall_est_le_30pct": 0.210671669793621
+      },
+      {
+        "recall_clean_full_test": 0.9407129455909944,
+        "n_attacked": 200,
+        "evasion_final": 0.88,
+        "evasion_le_10pct": 0.42,
+        "post_attack_recall_est_le_10pct": 0.5456135084427768,
+        "evasion_le_20pct": 0.745,
+        "post_attack_recall_est_le_20pct": 0.23988180112570356,
+        "evasion_le_30pct": 0.88,
+        "post_attack_recall_est_le_30pct": 0.11288555347091932
+      },
+      {
+        "recall_clean_full_test": 0.9523452157598499,
+        "n_attacked": 200,
+        "evasion_final": 0.875,
+        "evasion_le_10pct": 0.395,
+        "post_attack_recall_est_le_10pct": 0.5761688555347092,
+        "evasion_le_20pct": 0.705,
+        "post_attack_recall_est_le_20pct": 0.28094183864915573,
+        "evasion_le_30pct": 0.875,
+        "post_attack_recall_est_le_30pct": 0.11904315196998123
+      },
+      {
+        "recall_clean_full_test": 0.9575984990619137,
+        "n_attacked": 200,
+        "evasion_final": 0.935,
+        "evasion_le_10pct": 0.44,
+        "post_attack_recall_est_le_10pct": 0.5362551594746717,
+        "evasion_le_20pct": 0.815,
+        "post_attack_recall_est_le_20pct": 0.1771557223264541,
+        "evasion_le_30pct": 0.935,
+        "post_attack_recall_est_le_30pct": 0.06224390243902434
+      },
+      {
+        "recall_clean_full_test": 0.9572232645403377,
+        "n_attacked": 200,
+        "evasion_final": 0.705,
+        "evasion_le_10pct": 0.34,
+        "post_attack_recall_est_le_10pct": 0.6317673545966228,
+        "evasion_le_20pct": 0.51,
+        "post_attack_recall_est_le_20pct": 0.46903939962476543,
+        "evasion_le_30pct": 0.705,
+        "post_attack_recall_est_le_30pct": 0.28238086303939963
+      },
+      {
+        "recall_clean_full_test": 0.9594746716697936,
+        "n_attacked": 200,
+        "evasion_final": 0.62,
+        "evasion_le_10pct": 0.345,
+        "post_attack_recall_est_le_10pct": 0.6284559099437148,
+        "evasion_le_20pct": 0.46,
+        "post_attack_recall_est_le_20pct": 0.5181163227016886,
+        "evasion_le_30pct": 0.62,
+        "post_attack_recall_est_le_30pct": 0.3646003752345216
+      },
+      {
+        "recall_clean_full_test": 0.9545966228893058,
+        "n_attacked": 200,
+        "evasion_final": 0.77,
+        "evasion_le_10pct": 0.395,
+        "post_attack_recall_est_le_10pct": 0.57753095684803,
+        "evasion_le_20pct": 0.66,
+        "post_attack_recall_est_le_20pct": 0.32456285178236394,
+        "evasion_le_30pct": 0.77,
+        "post_attack_recall_est_le_30pct": 0.21955722326454033
+      }
+    ],
+    "C_A3_contrastive": [
+      {
+        "recall_clean_full_test": 0.9324577861163227,
+        "n_attacked": 200,
+        "evasion_final": 0.87,
+        "evasion_le_10pct": 0.445,
+        "post_attack_recall_est_le_10pct": 0.5175140712945591,
+        "evasion_le_20pct": 0.725,
+        "post_attack_recall_est_le_20pct": 0.2564258911819888,
+        "evasion_le_30pct": 0.87,
+        "post_attack_recall_est_le_30pct": 0.12121951219512195
+      },
+      {
+        "recall_clean_full_test": 0.9463414634146341,
+        "n_attacked": 200,
+        "evasion_final": 0.905,
+        "evasion_le_10pct": 0.47,
+        "post_attack_recall_est_le_10pct": 0.5015609756097561,
+        "evasion_le_20pct": 0.785,
+        "post_attack_recall_est_le_20pct": 0.2034634146341463,
+        "evasion_le_30pct": 0.905,
+        "post_attack_recall_est_le_30pct": 0.08990243902439021
+      },
+      {
+        "recall_clean_full_test": 0.9527204502814259,
+        "n_attacked": 200,
+        "evasion_final": 0.93,
+        "evasion_le_10pct": 0.49,
+        "post_attack_recall_est_le_10pct": 0.4858874296435272,
+        "evasion_le_20pct": 0.825,
+        "post_attack_recall_est_le_20pct": 0.16672607879924958,
+        "evasion_le_30pct": 0.93,
+        "post_attack_recall_est_le_30pct": 0.06669043151969976
+      },
+      {
+        "recall_clean_full_test": 0.9549718574108818,
+        "n_attacked": 200,
+        "evasion_final": 0.875,
+        "evasion_le_10pct": 0.475,
+        "post_attack_recall_est_le_10pct": 0.501360225140713,
+        "evasion_le_20pct": 0.755,
+        "post_attack_recall_est_le_20pct": 0.23396810506566604,
+        "evasion_le_30pct": 0.875,
+        "post_attack_recall_est_le_30pct": 0.11937148217636022
+      },
+      {
+        "recall_clean_full_test": 0.9403377110694184,
+        "n_attacked": 200,
+        "evasion_final": 0.935,
+        "evasion_le_10pct": 0.54,
+        "post_attack_recall_est_le_10pct": 0.43255534709193244,
+        "evasion_le_20pct": 0.825,
+        "post_attack_recall_est_le_20pct": 0.16455909943714828,
+        "evasion_le_30pct": 0.935,
+        "post_attack_recall_est_le_30pct": 0.061121951219512145
+      },
+      {
+        "recall_clean_full_test": 0.95046904315197,
+        "n_attacked": 200,
+        "evasion_final": 0.935,
+        "evasion_le_10pct": 0.455,
+        "post_attack_recall_est_le_10pct": 0.5180056285178236,
+        "evasion_le_20pct": 0.755,
+        "post_attack_recall_est_le_20pct": 0.23286491557223266,
+        "evasion_le_30pct": 0.935,
+        "post_attack_recall_est_le_30pct": 0.061780487804878
+      },
+      {
+        "recall_clean_full_test": 0.9572232645403377,
+        "n_attacked": 200,
+        "evasion_final": 0.95,
+        "evasion_le_10pct": 0.59,
+        "post_attack_recall_est_le_10pct": 0.3924615384615385,
+        "evasion_le_20pct": 0.875,
+        "post_attack_recall_est_le_20pct": 0.11965290806754221,
+        "evasion_le_30pct": 0.95,
+        "post_attack_recall_est_le_30pct": 0.047861163227016924
+      },
+      {
+        "recall_clean_full_test": 0.950844277673546,
+        "n_attacked": 200,
+        "evasion_final": 0.825,
+        "evasion_le_10pct": 0.525,
+        "post_attack_recall_est_le_10pct": 0.45165103189493433,
+        "evasion_le_20pct": 0.755,
+        "post_attack_recall_est_le_20pct": 0.23295684803001876,
+        "evasion_le_30pct": 0.825,
+        "post_attack_recall_est_le_30pct": 0.1663977485928706
+      },
+      {
+        "recall_clean_full_test": 0.9594746716697936,
+        "n_attacked": 200,
+        "evasion_final": 0.83,
+        "evasion_le_10pct": 0.435,
+        "post_attack_recall_est_le_10pct": 0.5421031894934334,
+        "evasion_le_20pct": 0.735,
+        "post_attack_recall_est_le_20pct": 0.2542607879924953,
+        "evasion_le_30pct": 0.83,
+        "post_attack_recall_est_le_30pct": 0.16311069418386495
+      },
+      {
+        "recall_clean_full_test": 0.9564727954971858,
+        "n_attacked": 200,
+        "evasion_final": 0.855,
+        "evasion_le_10pct": 0.46,
+        "post_attack_recall_est_le_10pct": 0.5164953095684803,
+        "evasion_le_20pct": 0.74,
+        "post_attack_recall_est_le_20pct": 0.24868292682926832,
+        "evasion_le_30pct": 0.855,
+        "post_attack_recall_est_le_30pct": 0.13868855534709196
+      }
+    ],
+    "C_A4_full": [
+      {
+        "recall_clean_full_test": 0.9373358348968105,
+        "n_attacked": 200,
+        "evasion_final": 0.78,
+        "evasion_le_10pct": 0.39,
+        "post_attack_recall_est_le_10pct": 0.5717748592870544,
+        "evasion_le_20pct": 0.595,
+        "post_attack_recall_est_le_20pct": 0.3796210131332083,
+        "evasion_le_30pct": 0.78,
+        "post_attack_recall_est_le_30pct": 0.2062138836772983
+      },
+      {
+        "recall_clean_full_test": 0.9534709193245778,
+        "n_attacked": 200,
+        "evasion_final": 0.83,
+        "evasion_le_10pct": 0.37,
+        "post_attack_recall_est_le_10pct": 0.600686679174484,
+        "evasion_le_20pct": 0.615,
+        "post_attack_recall_est_le_20pct": 0.3670863039399625,
+        "evasion_le_30pct": 0.83,
+        "post_attack_recall_est_le_30pct": 0.16209005628517828
+      },
+      {
+        "recall_clean_full_test": 0.9549718574108818,
+        "n_attacked": 200,
+        "evasion_final": 0.87,
+        "evasion_le_10pct": 0.405,
+        "post_attack_recall_est_le_10pct": 0.5682082551594746,
+        "evasion_le_20pct": 0.72,
+        "post_attack_recall_est_le_20pct": 0.2673921200750469,
+        "evasion_le_30pct": 0.87,
+        "post_attack_recall_est_le_30pct": 0.12414634146341463
+      },
+      {
+        "recall_clean_full_test": 0.9545966228893058,
+        "n_attacked": 200,
+        "evasion_final": 0.82,
+        "evasion_le_10pct": 0.405,
+        "post_attack_recall_est_le_10pct": 0.5679849906191369,
+        "evasion_le_20pct": 0.65,
+        "post_attack_recall_est_le_20pct": 0.334108818011257,
+        "evasion_le_30pct": 0.82,
+        "post_attack_recall_est_le_30pct": 0.17182739212007508
+      },
+      {
+        "recall_clean_full_test": 0.9399624765478424,
+        "n_attacked": 200,
+        "evasion_final": 0.89,
+        "evasion_le_10pct": 0.385,
+        "post_attack_recall_est_le_10pct": 0.578076923076923,
+        "evasion_le_20pct": 0.695,
+        "post_attack_recall_est_le_20pct": 0.286688555347092,
+        "evasion_le_30pct": 0.89,
+        "post_attack_recall_est_le_30pct": 0.10339587242026264
+      },
+      {
+        "recall_clean_full_test": 0.951594746716698,
+        "n_attacked": 200,
+        "evasion_final": 0.835,
+        "evasion_le_10pct": 0.395,
+        "post_attack_recall_est_le_10pct": 0.5757148217636022,
+        "evasion_le_20pct": 0.69,
+        "post_attack_recall_est_le_20pct": 0.29499437148217644,
+        "evasion_le_30pct": 0.835,
+        "post_attack_recall_est_le_30pct": 0.1570131332082552
+      },
+      {
+        "recall_clean_full_test": 0.9557223264540338,
+        "n_attacked": 200,
+        "evasion_final": 0.92,
+        "evasion_le_10pct": 0.44,
+        "post_attack_recall_est_le_10pct": 0.5352045028142589,
+        "evasion_le_20pct": 0.745,
+        "post_attack_recall_est_le_20pct": 0.2437091932457786,
+        "evasion_le_30pct": 0.92,
+        "post_attack_recall_est_le_30pct": 0.07645778611632266
+      },
+      {
+        "recall_clean_full_test": 0.9489681050656661,
+        "n_attacked": 200,
+        "evasion_final": 0.715,
+        "evasion_le_10pct": 0.36,
+        "post_attack_recall_est_le_10pct": 0.6073395872420263,
+        "evasion_le_20pct": 0.525,
+        "post_attack_recall_est_le_20pct": 0.4507598499061914,
+        "evasion_le_30pct": 0.715,
+        "post_attack_recall_est_le_30pct": 0.2704559099437149
+      },
+      {
+        "recall_clean_full_test": 0.9587242026266416,
+        "n_attacked": 200,
+        "evasion_final": 0.73,
+        "evasion_le_10pct": 0.375,
+        "post_attack_recall_est_le_10pct": 0.599202626641651,
+        "evasion_le_20pct": 0.535,
+        "post_attack_recall_est_le_20pct": 0.4458067542213883,
+        "evasion_le_30pct": 0.73,
+        "post_attack_recall_est_le_30pct": 0.25885553470919326
+      },
+      {
+        "recall_clean_full_test": 0.9549718574108818,
+        "n_attacked": 200,
+        "evasion_final": 0.825,
+        "evasion_le_10pct": 0.405,
+        "post_attack_recall_est_le_10pct": 0.5682082551594746,
+        "evasion_le_20pct": 0.65,
+        "post_attack_recall_est_le_20pct": 0.3342401500938086,
+        "evasion_le_30pct": 0.825,
+        "post_attack_recall_est_le_30pct": 0.16712007504690435
+      }
+    ],
+    "C_CANON_dedup": [
+      {
+        "recall_clean_full_test": 0.9320825515947467,
+        "n_attacked": 200,
+        "evasion_final": 0.945,
+        "evasion_le_10pct": 0.665,
+        "post_attack_recall_est_le_10pct": 0.3122476547842401,
+        "evasion_le_20pct": 0.87,
+        "post_attack_recall_est_le_20pct": 0.12117073170731708,
+        "evasion_le_30pct": 0.945,
+        "post_attack_recall_est_le_30pct": 0.05126454033771111
+      },
+      {
+        "recall_clean_full_test": 0.9395872420262664,
+        "n_attacked": 200,
+        "evasion_final": 0.97,
+        "evasion_le_10pct": 0.745,
+        "post_attack_recall_est_le_10pct": 0.23959474671669795,
+        "evasion_le_20pct": 0.9,
+        "post_attack_recall_est_le_20pct": 0.09395872420262662,
+        "evasion_le_30pct": 0.97,
+        "post_attack_recall_est_le_30pct": 0.028187617260788018
+      },
+      {
+        "recall_clean_full_test": 0.9433395872420263,
+        "n_attacked": 200,
+        "evasion_final": 0.985,
+        "evasion_le_10pct": 0.75,
+        "post_attack_recall_est_le_10pct": 0.23583489681050657,
+        "evasion_le_20pct": 0.935,
+        "post_attack_recall_est_le_20pct": 0.06131707317073166,
+        "evasion_le_30pct": 0.985,
+        "post_attack_recall_est_le_30pct": 0.014150093808630406
+      },
+      {
+        "recall_clean_full_test": 0.9395872420262664,
+        "n_attacked": 200,
+        "evasion_final": 0.95,
+        "evasion_le_10pct": 0.745,
+        "post_attack_recall_est_le_10pct": 0.23959474671669795,
+        "evasion_le_20pct": 0.89,
+        "post_attack_recall_est_le_20pct": 0.10335459662288929,
+        "evasion_le_30pct": 0.95,
+        "post_attack_recall_est_le_30pct": 0.046979362101313364
+      },
+      {
+        "recall_clean_full_test": 0.9264540337711069,
+        "n_attacked": 200,
+        "evasion_final": 0.98,
+        "evasion_le_10pct": 0.76,
+        "post_attack_recall_est_le_10pct": 0.22234896810506566,
+        "evasion_le_20pct": 0.935,
+        "post_attack_recall_est_le_20pct": 0.0602195121951219,
+        "evasion_le_30pct": 0.98,
+        "post_attack_recall_est_le_30pct": 0.018529080675422156
+      },
+      {
+        "recall_clean_full_test": 0.9455909943714822,
+        "n_attacked": 200,
+        "evasion_final": 0.95,
+        "evasion_le_10pct": 0.76,
+        "post_attack_recall_est_le_10pct": 0.2269418386491557,
+        "evasion_le_20pct": 0.925,
+        "post_attack_recall_est_le_20pct": 0.07091932457786113,
+        "evasion_le_30pct": 0.95,
+        "post_attack_recall_est_le_30pct": 0.04727954971857415
+      },
+      {
+        "recall_clean_full_test": 0.9444652908067542,
+        "n_attacked": 200,
+        "evasion_final": 0.97,
+        "evasion_le_10pct": 0.77,
+        "post_attack_recall_est_le_10pct": 0.21722701688555346,
+        "evasion_le_20pct": 0.945,
+        "post_attack_recall_est_le_20pct": 0.05194559099437153,
+        "evasion_le_30pct": 0.97,
+        "post_attack_recall_est_le_30pct": 0.028333958724202652
+      },
+      {
+        "recall_clean_full_test": 0.9452157598499062,
+        "n_attacked": 200,
+        "evasion_final": 0.905,
+        "evasion_le_10pct": 0.73,
+        "post_attack_recall_est_le_10pct": 0.2552082551594747,
+        "evasion_le_20pct": 0.85,
+        "post_attack_recall_est_le_20pct": 0.14178236397748595,
+        "evasion_le_30pct": 0.905,
+        "post_attack_recall_est_le_30pct": 0.08979549718574106
+      },
+      {
+        "recall_clean_full_test": 0.95046904315197,
+        "n_attacked": 200,
+        "evasion_final": 0.93,
+        "evasion_le_10pct": 0.69,
+        "post_attack_recall_est_le_10pct": 0.29464540337711076,
+        "evasion_le_20pct": 0.835,
+        "post_attack_recall_est_le_20pct": 0.15682739212007507,
+        "evasion_le_30pct": 0.93,
+        "post_attack_recall_est_le_30pct": 0.06653283302063785
+      },
+      {
+        "recall_clean_full_test": 0.9444652908067542,
+        "n_attacked": 200,
+        "evasion_final": 0.935,
+        "evasion_le_10pct": 0.75,
+        "post_attack_recall_est_le_10pct": 0.23611632270168856,
+        "evasion_le_20pct": 0.895,
+        "post_attack_recall_est_le_20pct": 0.09916885553470918,
+        "evasion_le_30pct": 0.935,
+        "post_attack_recall_est_le_30pct": 0.061390243902438975
+      }
+    ],
+    "C_CANON_strip": [
+      {
+        "recall_clean_full_test": 0.9459662288930581,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9459662288930581,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9459662288930581,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9459662288930581
+      },
+      {
+        "recall_clean_full_test": 0.9448405253283302,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9448405253283302,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9448405253283302,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9448405253283302
+      },
+      {
+        "recall_clean_full_test": 0.9459662288930581,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9459662288930581,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9459662288930581,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9459662288930581
+      },
+      {
+        "recall_clean_full_test": 0.9474671669793621,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9474671669793621,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9474671669793621,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9474671669793621
+      },
+      {
+        "recall_clean_full_test": 0.9305816135084428,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9305816135084428,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9305816135084428,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9305816135084428
+      },
+      {
+        "recall_clean_full_test": 0.9433395872420263,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9433395872420263,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9433395872420263,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9433395872420263
+      },
+      {
+        "recall_clean_full_test": 0.9418386491557224,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9418386491557224,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9418386491557224,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9418386491557224
+      },
+      {
+        "recall_clean_full_test": 0.9452157598499062,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9452157598499062,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9452157598499062,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9452157598499062
+      },
+      {
+        "recall_clean_full_test": 0.9347091932457786,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9347091932457786,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9347091932457786,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9347091932457786
+      },
+      {
+        "recall_clean_full_test": 0.9350844277673546,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "post_attack_recall_est_le_10pct": 0.9350844277673546,
+        "evasion_le_20pct": 0.0,
+        "post_attack_recall_est_le_20pct": 0.9350844277673546,
+        "evasion_le_30pct": 0.0,
+        "post_attack_recall_est_le_30pct": 0.9350844277673546
+      }
+    ]
+  },
+  "aggregate": {
+    "C_B0_vanilla": {
+      "recall_clean_full_test": [
+        0.9510694183864915,
+        0.010170447733674653
+      ],
+      "evasion_le_10pct": [
+        0.45499999999999996,
+        0.04511097427455984
+      ],
+      "evasion_le_20pct": [
+        0.7434999999999999,
+        0.04031438949060249
+      ],
+      "evasion_le_30pct": [
+        0.8574999999999999,
+        0.03675935255142561
+      ],
+      "evasion_final": [
+        0.8574999999999999,
+        0.03675935255142561
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.5182228893058161,
+        0.04208756294234976
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.13535046904315198,
+        0.034290543325312735
+      ]
+    },
+    "C_B0_sym": {
+      "recall_clean_full_test": [
+        0.9523827392120074,
+        0.0065756035892639165
+      ],
+      "evasion_le_10pct": [
+        0.4335,
+        0.04019017292821718
+      ],
+      "evasion_le_20pct": [
+        0.724,
+        0.085901105930017
+      ],
+      "evasion_le_30pct": [
+        0.9055,
+        0.054196402094604024
+      ],
+      "evasion_final": [
+        0.9055,
+        0.054196402094604024
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.539591181988743,
+        0.039434888618518495
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.09010168855534709,
+        0.05183939925809209
+      ]
+    },
+    "C_AT_augment": {
+      "recall_clean_full_test": [
+        0.9396622889305816,
+        0.005155345439578417
+      ],
+      "evasion_le_10pct": [
+        0.6014999999999999,
+        0.09736657537368765
+      ],
+      "evasion_le_20pct": [
+        0.9049999999999999,
+        0.053009433122794276
+      ],
+      "evasion_le_30pct": [
+        0.9630000000000001,
+        0.027676705006196074
+      ],
+      "evasion_final": [
+        0.9630000000000001,
+        0.027676705006196074
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.37449212007504695,
+        0.09167343011762319
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.03479193245778612,
+        0.026067490704157932
+      ]
+    },
+    "C_A2_pairedKL": {
+      "recall_clean_full_test": [
+        0.9526454033771106,
+        0.007366074437638649
+      ],
+      "evasion_le_10pct": [
+        0.381,
+        0.03080584360149873
+      ],
+      "evasion_le_20pct": [
+        0.6265,
+        0.10180987181997626
+      ],
+      "evasion_le_30pct": [
+        0.7885,
+        0.086517339302593
+      ],
+      "evasion_final": [
+        0.7885,
+        0.086517339302593
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.5897694183864916,
+        0.03134503445829918
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.2016305816135084,
+        0.08304388497388782
+      ]
+    },
+    "C_A3_contrastive": {
+      "recall_clean_full_test": [
+        0.9501313320825515,
+        0.007944787987359347
+      ],
+      "evasion_le_10pct": [
+        0.4885,
+        0.04637078821844632
+      ],
+      "evasion_le_20pct": [
+        0.7775000000000001,
+        0.04643543905251678
+      ],
+      "evasion_le_30pct": [
+        0.891,
+        0.04374928570845474
+      ],
+      "evasion_final": [
+        0.891,
+        0.04374928570845474
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.4859594746716698,
+        0.043998558808312695
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.10361444652908067,
+        0.04181564900280674
+      ]
+    },
+    "C_A4_full": {
+      "recall_clean_full_test": [
+        0.9510318949343339,
+        0.00667506250303375
+      ],
+      "evasion_le_10pct": [
+        0.39300000000000007,
+        0.02158703314492291
+      ],
+      "evasion_le_20pct": [
+        0.642,
+        0.07071774883294857
+      ],
+      "evasion_le_30pct": [
+        0.8215,
+        0.062010079825783174
+      ],
+      "evasion_final": [
+        0.8215,
+        0.062010079825783174
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.5772401500938086,
+        0.019966888363361985
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.16975759849906194,
+        0.05901629140808003
+      ]
+    },
+    "C_CANON_dedup": {
+      "recall_clean_full_test": [
+        0.9411257035647278,
+        0.006730100770226479
+      ],
+      "evasion_le_10pct": [
+        0.7365,
+        0.03170567772497539
+      ],
+      "evasion_le_20pct": [
+        0.898,
+        0.03579106033634658
+      ],
+      "evasion_le_30pct": [
+        0.952,
+        0.02357965224510317
+      ],
+      "evasion_final": [
+        0.952,
+        0.02357965224510317
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.24797598499061912,
+        0.029722742387766128
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.045244277673545975,
+        0.02235965330533378
+      ]
+    },
+    "C_CANON_strip": {
+      "recall_clean_full_test": [
+        0.9415009380863039,
+        0.005571822020106897
+      ],
+      "evasion_le_10pct": [
+        0.0,
+        0.0
+      ],
+      "evasion_le_20pct": [
+        0.0,
+        0.0
+      ],
+      "evasion_le_30pct": [
+        0.0,
+        0.0
+      ],
+      "evasion_final": [
+        0.0,
+        0.0
+      ],
+      "post_attack_recall_est_le_10pct": [
+        0.9415009380863039,
+        0.005571822020106897
+      ],
+      "post_attack_recall_est_le_30pct": [
+        0.9415009380863039,
+        0.005571822020106897
+      ]
+    }
+  }
+}

@@ -1,5 +1,5 @@
 """
-LID-DS Step 4: Zero-shot Transfer Evaluation (Section 4.5.3)
+LID-DS Step 4: Zero-shot Transfer Evaluation
 
 Model A4 yang dilatih pada ADFA-LD diuji LANGSUNG pada LID-DS tanpa
 pelatihan ulang, menggunakan vocabulary aligned (Mode B). Token LID-DS
@@ -7,7 +7,7 @@ dipetakan ke ruang token ADFA; socket->102, ipc->117, ABI_UNMAPPED-><UNK>.
 
 Ekspektasi (jujur): kinerja turun drastis karena (a) domain shift workload,
 (b) ketidakcocokan ABI i386<->x86_64 yang mengkolaps/menghilangkan token.
-Ini adalah BUKTI domain shift untuk Section 4.5.6, bukan kegagalan metode.
+Evaluasi ini mengukur transfer model ke domain LID-DS tanpa penyesuaian bobot.
 
 Test set per skenario = partisi test/normal (benign) + test/normal_and_attack
 (benign + malicious), dengan label window dari pelabelan timestamp-based.
@@ -83,7 +83,7 @@ def main():
         json.dump(report, f, indent=2, default=float)
 
     print("\n" + "=" * 64)
-    print("Ringkasan Zero-shot (Section 4.5.3):")
+    print("Ringkasan Zero-shot:")
     print(f"  {'Skenario':<24}{'Recall':>8}{'FPR':>8}{'F1':>8}{'AUC':>8}{'AUPRC':>8}")
     print("  " + "-" * 64)
     for scn, r in report["scenarios"].items():

@@ -1,0 +1,3 @@
+wrote authoritative legacy exports: baselines_report.json, ablation_report.json, full_comparison_report.json
+  B3/B0 clean recall=0.9511 DA=0.9435
+  A4   clean recall=0.9510 DA=0.9549

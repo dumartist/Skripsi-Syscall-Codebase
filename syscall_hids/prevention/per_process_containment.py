@@ -1,5 +1,5 @@
 """
-Section 4.4.3 + 4.4.6: Per-Process Risk Aggregation (B5) &
+Per-Process Risk Aggregation (B5) &
                         Containment Effectiveness Simulation (B3)
 
 Keduanya beroperasi pada level trace (satu file ADFA = satu proses),
@@ -15,7 +15,6 @@ Containment Score = 1 - (segmen_pertama_terblokir / N). Mengukur seberapa
 awal serangan dihentikan (relevan untuk APT kill-chain).
 
 Output: results/per_process_report.json, results/containment_report.json
-Thesis : Tabel 4.18 (per-process), 4.21 (containment).
 """
 
 import json
@@ -66,7 +65,7 @@ def risk_for_windows(model, windows):
 def main():
     torch.manual_seed(SEED); np.random.seed(SEED)
     print("=" * 70)
-    print("Section 4.4.3 + 4.4.6: Per-Process Aggregation (B5) & Containment (B3)")
+    print("Per-Process Aggregation (B5) & Containment (B3)")
     print(f"Device: {DEVICE}")
     print("=" * 70)
 

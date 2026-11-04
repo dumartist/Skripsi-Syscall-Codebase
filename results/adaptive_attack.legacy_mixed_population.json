@@ -1,0 +1,41 @@
+{
+  "_provenance": {
+    "source": "corrected_pipeline.py 10-seed run (AUTHORITATIVE)",
+    "exported_from": [
+      "results/corrected_full.json",
+      "results/corrected_baselines.json",
+      "results/adaptive_full.json"
+    ],
+    "note": "Legacy-schema export of the authoritative run; thesis + figures derive from the same run. Reproduction: baselines_ablation.py --all agrees to <=0.02pp, preserved in results/reproduction_run/. B3_vanilla_cnn = true no-defense B0.",
+    "seeds": [
+      42,
+      123,
+      456,
+      789,
+      1011,
+      1213,
+      1415,
+      1617,
+      1819,
+      2021
+    ]
+  },
+  "per_model": {
+    "B3_vanilla_cnn": {
+      "recall_clean": 0.9555347091932458,
+      "recall_under_adaptive": 0.10150000000000003,
+      "evasion_success_rate": 0.8985,
+      "evasion_le_10pct": 0.43450000000000005,
+      "evasion_le_20pct": 0.8045,
+      "mean_ratio_used_evaded": 0.3
+    },
+    "A4_full": {
+      "recall_clean": 0.9531332082551597,
+      "recall_under_adaptive": 0.20450000000000002,
+      "evasion_success_rate": 0.7955,
+      "evasion_le_10pct": 0.17850000000000002,
+      "evasion_le_20pct": 0.4925,
+      "mean_ratio_used_evaded": 0.3
+    }
+  }
+}

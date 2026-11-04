@@ -1,0 +1,6 @@
+{
+  "noop_per_call": 5,
+  "brute_force":   {"adfa_class":"Hydra_SSH","baseline_ok":true,"shimmed_ok":true,"phi_F":true,"noop_baseline":23,"noop_shimmed":923},
+  "reverse_shell": {"adfa_class":"Meterpreter","baseline_ok":true,"shimmed_ok":true,"phi_F":true,"noop_baseline":2,"noop_shimmed":62},
+  "webshell":      {"adfa_class":"Web_Shell","baseline_ok":true,"shimmed_ok":true,"phi_F":true,"noop_shimmed":124}
+}

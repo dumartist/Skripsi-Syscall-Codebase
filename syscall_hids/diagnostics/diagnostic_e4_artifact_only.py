@@ -10,7 +10,7 @@ Memeriksa dua kelemahan evaluasi:
       (benign clean + benign+artifact + malicious mimicry) dan melaporkan
       FPR & precision yang jujur.
 
-  #1  E4 ARTIFACT-ONLY (LEVEL 6).
+  E4 ARTIFACT-ONLY.
       Suntikkan no-op ke trace BENIGN (TANPA malware sama sekali) dengan rasio
       dan no-op set yang sama seperti generator mimikri. Jika model menandai
       trace benign ini sebagai *malicious*, maka "robustness" terhadap mimikri

@@ -29,7 +29,7 @@ torch.save({"epoch": ck.get("epoch"), "model_state": ck["model_state"],
             "source": "C_A4_full_seed42.pt (corrected_pipeline)"}, M / "encoder_best.pt")
 meta = json.load(open("prepared_data/metadata.json"))
 # AUPRC is not part of corrected_full.json; compute it from the same checkpoint so
-# every consumer (Tabel 4.3, Tabel G.1, Gambar G.3) reads one value.
+# downstream evaluations use the same checkpoint.
 import numpy as np
 from sklearn.metrics import average_precision_score
 from syscall_hids.diagnostics.diagnostic_shortcut_learning import load_model, get_probs, pad_to, MAX_LEN

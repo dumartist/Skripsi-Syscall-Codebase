@@ -1,0 +1,404 @@
+{
+  "recvfrom": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "fcntl": {
+    "adfa_number": 221,
+    "adfa_token": 109,
+    "kind": "direct",
+    "model_input_token": 109
+  },
+  "poll": {
+    "adfa_number": 168,
+    "adfa_token": 75,
+    "kind": "direct",
+    "model_input_token": 75
+  },
+  "lstat": {
+    "adfa_number": 196,
+    "adfa_token": 89,
+    "kind": "direct",
+    "model_input_token": 89
+  },
+  "sendto": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "setsockopt": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "close": {
+    "adfa_number": 6,
+    "adfa_token": 6,
+    "kind": "direct",
+    "model_input_token": 6
+  },
+  "getcwd": {
+    "adfa_number": 183,
+    "adfa_token": 82,
+    "kind": "direct",
+    "model_input_token": 82
+  },
+  "access": {
+    "adfa_number": 33,
+    "adfa_token": 21,
+    "kind": "direct",
+    "model_input_token": 21
+  },
+  "read": {
+    "adfa_number": 3,
+    "adfa_token": 3,
+    "kind": "direct",
+    "model_input_token": 3
+  },
+  "setitimer": {
+    "adfa_number": 104,
+    "adfa_token": 49,
+    "kind": "direct",
+    "model_input_token": 49
+  },
+  "futex": {
+    "adfa_number": 240,
+    "adfa_token": 118,
+    "kind": "direct",
+    "model_input_token": 118
+  },
+  "stat": {
+    "adfa_number": 195,
+    "adfa_token": 88,
+    "kind": "direct",
+    "model_input_token": 88
+  },
+  "fstat": {
+    "adfa_number": 197,
+    "adfa_token": 90,
+    "kind": "direct",
+    "model_input_token": 90
+  },
+  "open": {
+    "adfa_number": 5,
+    "adfa_token": 5,
+    "kind": "direct",
+    "model_input_token": 5
+  },
+  "munmap": {
+    "adfa_number": 91,
+    "adfa_token": 42,
+    "kind": "direct",
+    "model_input_token": 42
+  },
+  "brk": {
+    "adfa_number": 45,
+    "adfa_token": 29,
+    "kind": "direct",
+    "model_input_token": 29
+  },
+  "chdir": {
+    "adfa_number": 12,
+    "adfa_token": 12,
+    "kind": "direct",
+    "model_input_token": 12
+  },
+  "writev": {
+    "adfa_number": 146,
+    "adfa_token": 66,
+    "kind": "direct",
+    "model_input_token": 66
+  },
+  "mmap": {
+    "adfa_number": 192,
+    "adfa_token": 86,
+    "kind": "direct",
+    "model_input_token": 86
+  },
+  "lseek": {
+    "adfa_number": 19,
+    "adfa_token": 15,
+    "kind": "direct",
+    "model_input_token": 15
+  },
+  "accept": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "write": {
+    "adfa_number": 4,
+    "adfa_token": 4,
+    "kind": "direct",
+    "model_input_token": 4
+  },
+  "shutdown": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "io_getevents": {
+    "adfa_number": null,
+    "adfa_token": null,
+    "kind": "abi_unmapped",
+    "model_input_token": 1
+  },
+  "socket": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "connect": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "getsockopt": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "getpeername": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "gettid": {
+    "adfa_number": 224,
+    "adfa_token": 110,
+    "kind": "direct",
+    "model_input_token": 110
+  },
+  "times": {
+    "adfa_number": 43,
+    "adfa_token": 28,
+    "kind": "direct",
+    "model_input_token": 28
+  },
+  "rt_sigaction": {
+    "adfa_number": 174,
+    "adfa_token": 77,
+    "kind": "direct",
+    "model_input_token": 77
+  },
+  "umask": {
+    "adfa_number": 60,
+    "adfa_token": 32,
+    "kind": "direct",
+    "model_input_token": 32
+  },
+  "rt_sigprocmask": {
+    "adfa_number": 175,
+    "adfa_token": 78,
+    "kind": "direct",
+    "model_input_token": 78
+  },
+  "getuid": {
+    "adfa_number": 199,
+    "adfa_token": 92,
+    "kind": "direct",
+    "model_input_token": 92
+  },
+  "flock": {
+    "adfa_number": 143,
+    "adfa_token": 64,
+    "kind": "direct",
+    "model_input_token": 64
+  },
+  "pread": {
+    "adfa_number": 180,
+    "adfa_token": 81,
+    "kind": "direct",
+    "model_input_token": 81
+  },
+  "utime": {
+    "adfa_number": 30,
+    "adfa_token": 20,
+    "kind": "direct",
+    "model_input_token": 20
+  },
+  "semop": {
+    "adfa_number": 117,
+    "adfa_token": 52,
+    "kind": "ipc_collapsed",
+    "model_input_token": 52
+  },
+  "select": {
+    "adfa_number": 142,
+    "adfa_token": 63,
+    "kind": "direct",
+    "model_input_token": 63
+  },
+  "getsockname": {
+    "adfa_number": 102,
+    "adfa_token": 48,
+    "kind": "socket_collapsed",
+    "model_input_token": 48
+  },
+  "epoll_wait": {
+    "adfa_number": 256,
+    "adfa_token": 124,
+    "kind": "direct",
+    "model_input_token": 124
+  },
+  "chmod": {
+    "adfa_number": 15,
+    "adfa_token": 14,
+    "kind": "direct",
+    "model_input_token": 14
+  },
+  "rename": {
+    "adfa_number": 38,
+    "adfa_token": 23,
+    "kind": "direct",
+    "model_input_token": 23
+  },
+  "wait4": {
+    "adfa_number": 114,
+    "adfa_token": 51,
+    "kind": "direct",
+    "model_input_token": 51
+  },
+  "pwrite": {
+    "adfa_number": null,
+    "adfa_token": null,
+    "kind": "abi_unmapped",
+    "model_input_token": 1
+  },
+  "getpid": {
+    "adfa_number": 20,
+    "adfa_token": 16,
+    "kind": "direct",
+    "model_input_token": 16
+  },
+  "nanosleep": {
+    "adfa_number": 162,
+    "adfa_token": 73,
+    "kind": "direct",
+    "model_input_token": 73
+  },
+  "geteuid": {
+    "adfa_number": 201,
+    "adfa_token": 94,
+    "kind": "direct",
+    "model_input_token": 94
+  },
+  "ftruncate": {
+    "adfa_number": 93,
+    "adfa_token": 43,
+    "kind": "direct",
+    "model_input_token": 43
+  },
+  "madvise": {
+    "adfa_number": 219,
+    "adfa_token": 107,
+    "kind": "direct",
+    "model_input_token": 107
+  },
+  "set_robust_list": {
+    "adfa_number": 311,
+    "adfa_token": 145,
+    "kind": "direct",
+    "model_input_token": 145
+  },
+  "clone": {
+    "adfa_number": 120,
+    "adfa_token": 55,
+    "kind": "direct",
+    "model_input_token": 55
+  },
+  "epoll_ctl": {
+    "adfa_number": 255,
+    "adfa_token": 123,
+    "kind": "direct",
+    "model_input_token": 123
+  },
+  "setgid": {
+    "adfa_number": 214,
+    "adfa_token": 106,
+    "kind": "direct",
+    "model_input_token": 106
+  },
+  "setgroups": {
+    "adfa_number": 206,
+    "adfa_token": 99,
+    "kind": "direct",
+    "model_input_token": 99
+  },
+  "setuid": {
+    "adfa_number": 213,
+    "adfa_token": 105,
+    "kind": "direct",
+    "model_input_token": 105
+  },
+  "epoll_create1": {
+    "adfa_number": null,
+    "adfa_token": null,
+    "kind": "abi_unmapped",
+    "model_input_token": 1
+  },
+  "exit_group": {
+    "adfa_number": 252,
+    "adfa_token": 121,
+    "kind": "direct",
+    "model_input_token": 121
+  },
+  "procexit": {
+    "adfa_number": null,
+    "adfa_token": null,
+    "kind": "abi_unmapped",
+    "model_input_token": 1
+  },
+  "io_submit": {
+    "adfa_number": null,
+    "adfa_token": null,
+    "kind": "abi_unmapped",
+    "model_input_token": 1
+  },
+  "sched_yield": {
+    "adfa_number": 158,
+    "adfa_token": 70,
+    "kind": "direct",
+    "model_input_token": 70
+  },
+  "fsync": {
+    "adfa_number": 118,
+    "adfa_token": 53,
+    "kind": "direct",
+    "model_input_token": 53
+  },
+  "openat": {
+    "adfa_number": 295,
+    "adfa_token": 138,
+    "kind": "direct",
+    "model_input_token": 138
+  },
+  "unlink": {
+    "adfa_number": 10,
+    "adfa_token": 10,
+    "kind": "direct",
+    "model_input_token": 10
+  },
+  "mprotect": {
+    "adfa_number": 125,
+    "adfa_token": 57,
+    "kind": "direct",
+    "model_input_token": 57
+  },
+  "getdents": {
+    "adfa_number": 141,
+    "adfa_token": 62,
+    "kind": "direct",
+    "model_input_token": 62
+  }
+}

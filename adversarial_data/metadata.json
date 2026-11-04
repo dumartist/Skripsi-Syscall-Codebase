@@ -1,0 +1,41 @@
+{
+  "strategies": [
+    "distribution_aware",
+    "random",
+    "position_aware"
+  ],
+  "max_injection_ratio": 0.3,
+  "noop_syscalls": [
+    20,
+    199,
+    201,
+    64,
+    13,
+    78
+  ],
+  "window_size": 100,
+  "max_padded_length": 130,
+  "train_malicious_count": 2612,
+  "test_malicious_count": 2665,
+  "injection_stats": {
+    "distribution_aware": {
+      "train_pct": 30.0,
+      "test_pct": 30.0,
+      "jsd_before": 0.6556594988616672,
+      "jsd_after": 0.6315340890968961
+    },
+    "random": {
+      "train_pct": 30.0,
+      "test_pct": 30.0,
+      "jsd_before": 0.6556594988616672,
+      "jsd_after": 0.6644048142654423
+    },
+    "position_aware": {
+      "train_pct": 30.0,
+      "test_pct": 30.0,
+      "jsd_before": 0.6556594988616672,
+      "jsd_after": 0.6611630206366609
+    }
+  },
+  "seed": 42
+}

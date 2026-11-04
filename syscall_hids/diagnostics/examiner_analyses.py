@@ -1,4 +1,4 @@
-"""Analyses requested in the examiner report (major revision).
+"""Evaluate adaptive evasion, false positives, and uncertainty across models.
 
 Stages (run all, or pick with --stages):
   pertrace  Re-run the score-based adaptive attack on the SAME populations as
@@ -356,7 +356,7 @@ def stage_prev():
         "window_tau0.67_Cfp5": (op67["abr"], op67["fpr"]),
         "trace_mean_tau0.50": (perproc["per_process_mean"]["abr"], perproc["per_process_mean"]["fpr"]),
     }
-    WPS = 470.0   # windows/s observed by the deployed daemon (Tabel 4.27)
+    WPS = 470.0   # windows/s observed by the deployed daemon
     out = {"formula": "PPV = pi*TPR / (pi*TPR + (1-pi)*FPR)", "windows_per_second_host": WPS, "rows": []}
     for name, (tpr, fpr) in points.items():
         for pi in (0.0695, 0.01, 0.001):

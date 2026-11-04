@@ -1,0 +1,93 @@
+{
+  "lidds_syscalls_total": 67,
+  "adfa_vocab_size": 152,
+  "counts": {
+    "direct": 51,
+    "socket_collapsed": 10,
+    "ipc_collapsed": 1,
+    "abi_unmapped": 5
+  },
+  "pct": {
+    "direct": 76.1,
+    "socket_collapsed": 14.9,
+    "ipc_collapsed": 1.5,
+    "abi_unmapped": 7.5
+  },
+  "lists": {
+    "direct": [
+      "fcntl",
+      "poll",
+      "lstat",
+      "close",
+      "getcwd",
+      "access",
+      "read",
+      "setitimer",
+      "futex",
+      "stat",
+      "fstat",
+      "open",
+      "munmap",
+      "brk",
+      "chdir",
+      "writev",
+      "mmap",
+      "lseek",
+      "write",
+      "gettid",
+      "times",
+      "rt_sigaction",
+      "umask",
+      "rt_sigprocmask",
+      "getuid",
+      "flock",
+      "pread",
+      "utime",
+      "select",
+      "epoll_wait",
+      "chmod",
+      "rename",
+      "wait4",
+      "getpid",
+      "nanosleep",
+      "geteuid",
+      "ftruncate",
+      "madvise",
+      "set_robust_list",
+      "clone",
+      "epoll_ctl",
+      "setgid",
+      "setgroups",
+      "setuid",
+      "exit_group",
+      "sched_yield",
+      "fsync",
+      "openat",
+      "unlink",
+      "mprotect",
+      "getdents"
+    ],
+    "socket_collapsed": [
+      "recvfrom",
+      "sendto",
+      "setsockopt",
+      "accept",
+      "shutdown",
+      "socket",
+      "connect",
+      "getsockopt",
+      "getpeername",
+      "getsockname"
+    ],
+    "ipc_collapsed": [
+      "semop"
+    ],
+    "abi_unmapped": [
+      "io_getevents",
+      "pwrite",
+      "epoll_create1",
+      "procexit",
+      "io_submit"
+    ]
+  }
+}

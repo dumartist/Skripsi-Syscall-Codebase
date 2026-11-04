@@ -1,35 +1,29 @@
-# Syscall HIDS/HIPS codebase
+# Syscall HIDS/HIPS
 
-Kode eksperimen untuk deteksi intrusi berbasis urutan system call, evaluasi serangan mimikri, dan prototipe pencegahan eBPF. Folder ini berisi kode saja; dataset, hasil eksperimen, checkpoint, dan naskah tidak disertakan.
+Kode, checkpoint, data olahan, dan hasil evaluasi untuk eksperimen syscall-sequence HIDS/HIPS serta prototipe pencegahan eBPF.
 
 ## Struktur
 
-```text
-Skripsi-Syscall-Codebase/
-├── syscall_hids/
-│   ├── data/          # persiapan ADFA-LD dan LID-DS, vocabulary, helper data
-│   ├── attacks/       # mimikri statis dan serangan adaptif
-│   ├── training/      # model, baseline, ablasi, dan pelatihan
-│   ├── evaluation/    # evaluasi adaptif, lintas dataset, dan budget serangan
-│   ├── diagnostics/   # shortcut, atribusi, artefak injeksi, analisis statistik
-│   ├── prevention/    # kebijakan pencegahan, containment, latensi, Pareto
-│   └── export/        # ekspor model ke ONNX
-├── deploy/
-│   ├── capture/       # pemantauan eBPF dan event yang hilang
-│   ├── runtime/       # daemon HIPS dan vocabulary untuk deployment
-│   ├── validation/    # workload serangan, no-op shim, uji fungsional
-│   └── benchmarks/    # overhead dan latensi pipeline di VM
-├── run_experiments.sh # urutan eksperimen inti
-├── requirements.txt   # dependensi Python
-├── .gitignore         # data dan artefak lokal yang tidak dipush
-└── README.md
-```
+| Folder | Kegunaan |
+|---|---|
+| `syscall_hids/data/` | Persiapan ADFA-LD dan LID-DS, vocabulary, helper data |
+| `syscall_hids/attacks/` | Mimikri statis dan serangan adaptif |
+| `syscall_hids/training/` | Model, baseline, ablasi, dan pelatihan |
+| `syscall_hids/evaluation/` | Evaluasi adaptif dan lintas dataset |
+| `syscall_hids/diagnostics/` | Analisis shortcut, atribusi, artefak injeksi, statistik |
+| `syscall_hids/prevention/` | Kebijakan pencegahan, containment, dan latensi |
+| `syscall_hids/export/` | Ekspor model ke ONNX |
+| `deploy/` | Capture eBPF, daemon HIPS, validasi, dan benchmark VM |
+| `models/` | Checkpoint PyTorch dan model ONNX |
+| `prepared_data/`, `prepared_data_lidds/` | Data olahan dan vocabulary untuk evaluasi |
+| `adversarial_data/` | Sampel mimikri statis hasil generator |
+| `results/` | Laporan JSON, split validasi, dan log eksperimen |
 
-Skrip dalam `syscall_hids/` dijalankan sebagai modul Python dari akar proyek. Folder output tetap dibuat relatif terhadap akar proyek.
+Model `C_*_seed*.pt` adalah checkpoint dari pipeline terkoreksi. Tag lama seperti `A4_full_seed*.pt` dipertahankan untuk skrip diagnostik dan ekspor. `models/a4_full.onnx` dan `models/encoder_best.pt` adalah artefak A4 seed 42. File `*.pre_fix.pt` adalah checkpoint historis sebelum koreksi; jangan gunakan sebagai model utama.
 
 ## Persiapan
 
-Gunakan Python 3.12 dan jalankan perintah berikut dari akar proyek:
+Jalankan perintah dari akar repositori dengan Python 3.12:
 
 ```bash
 python3 -m venv .venv
@@ -37,40 +31,46 @@ source .venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-Di Windows PowerShell, aktifkan lingkungan dengan `.venv\Scripts\Activate.ps1`. Untuk CUDA, sesuaikan instalasi PyTorch dengan perangkat dan driver host. Prototipe Linux juga membutuhkan BCC (`python3-bpfcc`) serta hak akses untuk attach eBPF dan mengirim signal ke proses.
+Di Windows PowerShell, aktifkan lingkungan dengan `.venv\Scripts\Activate.ps1`. Untuk CUDA, sesuaikan instalasi PyTorch dengan perangkat dan driver host. Prototipe Linux memerlukan BCC (`python3-bpfcc`) dari paket OS serta izin untuk attach eBPF dan mengirim signal ke proses.
 
-Letakkan ADFA-LD di `archive-kaggle/ADFA-LD/` dan rekaman LID-DS 2021 di `LID-DS/`. Dataset tidak didistribusikan di folder ini. Data turunan (`prepared_data/`, `prepared_data_lidds/`, `adversarial_data/`), checkpoint (`models/`), dan output (`results/`) diabaikan oleh Git. Periksa lisensi dataset sebelum mengunduh dan menggunakannya.
+Checkpoint dan data olahan disertakan agar analisis yang memakai artefak tersimpan dapat dijalankan tanpa menyiapkan dataset mentah. Untuk mengulang ekstraksi dan pelatihan dari awal, letakkan ADFA-LD di `archive-kaggle/ADFA-LD/` serta rekaman LID-DS 2021 di `LID-DS/`. Dataset mentah tersebut tidak disertakan. Periksa ketentuan distribusi dataset sebelum memublikasikan data olahannya.
 
 ## Menjalankan eksperimen
 
-Di Git Bash atau shell Linux:
+Skrip Python dalam `syscall_hids/` dijalankan sebagai modul dari akar repositori. Contoh:
+
+```bash
+python3 -m syscall_hids.evaluation.adaptive_eval --seeds 42 123 456 789 1011 1213 1415 1617 1819 2021 --n 200
+python3 -m syscall_hids.diagnostics.analyze_corrected
+```
+
+Untuk mengulang rangkaian eksperimen dari dataset mentah di Git Bash atau Linux:
 
 ```bash
 bash run_experiments.sh
 ```
 
-Untuk menjalankan satu tahap saja:
-
-```bash
-python3 -m syscall_hids.data.adfa_ld_preparation
-python3 -m syscall_hids.attacks.adversarial_mimicry
-python3 -m syscall_hids.training.corrected_pipeline --seeds 42 123 456 789 1011 1213 1415 1617 1819 2021 --out corrected_full.json
-python3 -m syscall_hids.evaluation.adaptive_eval --seeds 42 123 456 789 1011 1213 1415 1617 1819 2021 --n 200
-```
-
-Perintah `run_experiments.sh` memerlukan kedua dataset dan dapat memakan waktu serta sumber daya komputasi yang besar. Hasil dibuat di `results/` dan checkpoint di `models/`. Jalankan skrip deployment dari akar proyek agar path pada contoh tetap sesuai.
+Rangkaian penuh memerlukan kedua dataset dan sumber daya komputasi yang besar. Skrip dapat menulis ulang file dalam `models/`, `prepared_data/`, `adversarial_data/`, dan `results/`.
 
 ## Prototipe HIPS
 
-`deploy/runtime/hips_daemon.py` menjalankan capture syscall via eBPF, inferensi ONNX, pemetaan skor ke tindakan, dan enforcement melalui signal userspace. `deploy/runtime/hips_daemon_v2.py` adalah varian dengan whitelist. `deploy/validation/attack_simulator.py` dan `deploy/validation/benign_workload.sh` menyediakan workload uji; skrip validasi dan `noop_shim.c` di folder yang sama memeriksa validitas fungsional injeksi no-op di VM terisolasi.
+`deploy/runtime/hips_daemon.py` menangkap syscall via eBPF, menjalankan inferensi ONNX, menentukan tindakan, dan dapat melakukan enforcement melalui signal userspace. Varian `hips_daemon_v2.py` menambahkan whitelist. Skrip di `deploy/validation/` menyediakan workload dan pemeriksaan no-op; `deploy/benchmarks/` mengukur overhead dan latensi.
 
-Contoh dry run di Linux, setelah mengekspor ONNX dan vocabulary dari eksperimen:
+Untuk menjalankan deteksi di Linux x86_64, siapkan satu model ONNX dan vocabulary yang memetakan nomor syscall host ke token model. Daemon membaca event langsung dari eBPF. Contoh berikut memakai model LID-DS dalam mode dry run.
 
 ```bash
-sudo env PYTHONPATH=<venv>/site-packages /usr/bin/python3 deploy/runtime/hips_daemon.py \
-  --model models/a4_full.onnx --vocab prepared_data/vocabulary.json
+python3 deploy/runtime/build_deploy_vocab.py --native prepared_data_lidds/vocabulary_native.json --out /tmp/lidds_vocab.json
+sudo env PYTHONPATH=/path/to/venv/site-packages /usr/bin/python3 deploy/runtime/hips_daemon.py \
+  --model models/lidds_Bruteforce_CWE-307.onnx --vocab /tmp/lidds_vocab.json
 ```
 
-## Asal dan batasan
+## Git dan artefak biner
 
-Repositori ini memuat kode eksperimen dan prototipe deployment. Dataset, checkpoint, hasil eksperimen, serta materi penulisan dan presentasi dikecualikan oleh `.gitignore` atau tidak disertakan.
+Checkpoint dan data olahan berjumlah sekitar 140 MB. `.gitattributes` memakai Git LFS untuk file `.pt`, `.onnx`, `.npz`, dan `.pkl`. Sebelum melakukan commit atau setelah clone:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+`.gitignore` hanya mengecualikan dataset mentah yang besar, file kerja lokal, artefak historis, dan dokumen lokal. Model, data olahan, serta hasil evaluasi sengaja disertakan dalam repositori ini.

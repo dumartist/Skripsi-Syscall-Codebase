@@ -9,6 +9,7 @@ SEEDS=(42 123 456 789 1011 1213 1415 1617 1819 2021)
 "$PY" -m syscall_hids.attacks.adversarial_mimicry
 "$PY" -m syscall_hids.training.corrected_pipeline --seeds "${SEEDS[@]}" --out corrected_full.json --skip-adaptive
 "$PY" -m syscall_hids.training.corrected_baselines
+"$PY" -m syscall_hids.evaluation.make_legacy_shims
 "$PY" -m syscall_hids.training.stage_legacy_models
 "$PY" -m syscall_hids.evaluation.adaptive_eval --seeds "${SEEDS[@]}" --n 200 --out adaptive_full.json
 "$PY" -m syscall_hids.diagnostics.analyze_corrected
@@ -30,3 +31,4 @@ SEEDS=(42 123 456 789 1011 1213 1415 1617 1819 2021)
 "$PY" -m syscall_hids.evaluation.lidds_eval_zeroshot
 "$PY" -m syscall_hids.evaluation.lidds_eval_finetune
 "$PY" -m syscall_hids.evaluation.lidds_eval_scratch
+"$PY" -m syscall_hids.export.export_onnx_lidds Bruteforce_CWE-307

@@ -1,0 +1,244 @@
+{
+  "model": "A4_full_seed42",
+  "tuning_split": "validation (trace-level)",
+  "attack_prior": 0.06950058677793715,
+  "tau_grid": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85
+  ],
+  "cost_profiles": {
+    "Balanced": {
+      "Normal": [
+        0.0,
+        100.0
+      ],
+      "Alert": [
+        0.1,
+        50.0
+      ],
+      "Quarantine": [
+        5.0,
+        5.0
+      ],
+      "Terminate": [
+        20.0,
+        0.0
+      ]
+    },
+    "Low-Disruption": {
+      "Normal": [
+        0.0,
+        100.0
+      ],
+      "Alert": [
+        0.1,
+        50.0
+      ],
+      "Quarantine": [
+        10.0,
+        5.0
+      ],
+      "Terminate": [
+        40.0,
+        0.0
+      ]
+    },
+    "Zero-Tolerance": {
+      "Normal": [
+        0.0,
+        200.0
+      ],
+      "Alert": [
+        0.1,
+        100.0
+      ],
+      "Quarantine": [
+        5.0,
+        5.0
+      ],
+      "Terminate": [
+        20.0,
+        0.0
+      ]
+    }
+  },
+  "profiles": {
+    "Balanced": {
+      "multitier_thresholds": {
+        "tau1": 0.15,
+        "tau2": 0.6,
+        "tau3": 0.75
+      },
+      "multitier_expected_cost_test": 2.2868796453253357,
+      "single_threshold": 0.6,
+      "single_expected_cost_test": 2.891641674273047,
+      "cost_reduction_pct": 20.914141414141408,
+      "abr": 0.9136960600375235,
+      "fpr": 0.12315022421524664,
+      "confusion_4x2": {
+        "Normal": {
+          "benign": 18682,
+          "malicious": 17
+        },
+        "Alert": {
+          "benign": 12604,
+          "malicious": 213
+        },
+        "Quarantine": {
+          "benign": 968,
+          "malicious": 144
+        },
+        "Terminate": {
+          "benign": 3426,
+          "malicious": 2291
+        }
+      }
+    },
+    "Low-Disruption": {
+      "multitier_thresholds": {
+        "tau1": 0.15,
+        "tau2": 0.65,
+        "tau3": 0.75
+      },
+      "multitier_expected_cost_test": 4.155582214108749,
+      "single_threshold": 0.7,
+      "single_expected_cost_test": 4.786021645586127,
+      "cost_reduction_pct": 13.172515257192694,
+      "abr": 0.9028142589118199,
+      "fpr": 0.11463004484304933,
+      "confusion_4x2": {
+        "Normal": {
+          "benign": 18682,
+          "malicious": 17
+        },
+        "Alert": {
+          "benign": 12908,
+          "malicious": 242
+        },
+        "Quarantine": {
+          "benign": 664,
+          "malicious": 115
+        },
+        "Terminate": {
+          "benign": 3426,
+          "malicious": 2291
+        }
+      }
+    },
+    "Zero-Tolerance": {
+      "multitier_thresholds": {
+        "tau1": 0.15,
+        "tau2": 0.5,
+        "tau3": 0.75
+      },
+      "multitier_expected_cost_test": 2.555357934541661,
+      "single_threshold": 0.6,
+      "single_expected_cost_test": 3.491459121137045,
+      "cost_reduction_pct": 26.811174185838073,
+      "abr": 0.9373358348968105,
+      "fpr": 0.14562780269058295,
+      "confusion_4x2": {
+        "Normal": {
+          "benign": 18682,
+          "malicious": 17
+        },
+        "Alert": {
+          "benign": 11802,
+          "malicious": 150
+        },
+        "Quarantine": {
+          "benign": 1770,
+          "malicious": 207
+        },
+        "Terminate": {
+          "benign": 3426,
+          "malicious": 2291
+        }
+      }
+    }
+  },
+  "prevalence_sensitivity": {
+    "0.0100": {
+      "Balanced": {
+        "mt_cost": 2.03481918917583,
+        "st_cost": 2.041537262638925,
+        "cost_reduction_pct": 0.3290693530820737
+      },
+      "Low-Disruption": {
+        "mt_cost": 3.5120057173836225,
+        "st_cost": 3.9427368142084322,
+        "cost_reduction_pct": 10.924672812869096
+      },
+      "Zero-Tolerance": {
+        "mt_cost": 2.115574591269908,
+        "st_cost": 2.3409615700115265,
+        "cost_reduction_pct": 9.627965773932312
+      }
+    },
+    "0.0695": {
+      "Balanced": {
+        "mt_cost": 2.2868796453253357,
+        "st_cost": 2.891641674273047,
+        "cost_reduction_pct": 20.914141414141408
+      },
+      "Low-Disruption": {
+        "mt_cost": 4.155582214108749,
+        "st_cost": 4.786021645586127,
+        "cost_reduction_pct": 13.172515257192694
+      },
+      "Zero-Tolerance": {
+        "mt_cost": 2.555357934541661,
+        "st_cost": 3.491459121137045,
+        "cost_reduction_pct": 26.811174185838073
+      }
+    },
+    "0.2000": {
+      "Balanced": {
+        "mt_cost": 2.4854837917196004,
+        "st_cost": 3.583328145113117,
+        "cost_reduction_pct": 30.63756119826029
+      },
+      "Low-Disruption": {
+        "mt_cost": 4.264073675531513,
+        "st_cost": 5.666885974137424,
+        "cost_reduction_pct": 24.754553118027708
+      },
+      "Zero-Tolerance": {
+        "mt_cost": 2.849461277648306,
+        "st_cost": 4.140660782944497,
+        "cost_reduction_pct": 31.18341668109302
+      }
+    },
+    "0.5000": {
+      "Balanced": {
+        "mt_cost": 2.5395911068997723,
+        "st_cost": 3.3383820324922806,
+        "cost_reduction_pct": 23.92748696278383
+      },
+      "Low-Disruption": {
+        "mt_cost": 3.6607021923034857,
+        "st_cost": 5.1758259786806216,
+        "cost_reduction_pct": 29.27308206686189
+      },
+      "Zero-Tolerance": {
+        "mt_cost": 2.792874408963562,
+        "st_cost": 5.401912139593973,
+        "cost_reduction_pct": 48.29841106646573
+      }
+    }
+  }
+}

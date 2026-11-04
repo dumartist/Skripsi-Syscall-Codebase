@@ -1,0 +1,56 @@
+{
+  "config": {
+    "ig_steps": 50,
+    "max_samples": 200,
+    "seed": 42,
+    "noop_tokens": [
+      16,
+      92,
+      94,
+      34,
+      13,
+      39
+    ],
+    "injection_ratio": 0.3
+  },
+  "per_model": {
+    "B3_vanilla_cnn": {
+      "n_samples": 200,
+      "noop_attr_fraction_mean": 0.3381663978099823,
+      "noop_count_fraction_mean": 0.2703173884938591,
+      "enrichment_ratio_mean": 1.2938343811224764,
+      "enrichment_ratio_median": 1.2211036384105682,
+      "n_flipped_available": 14541
+    },
+    "A2_cls_robust": {
+      "n_samples": 200,
+      "noop_attr_fraction_mean": 0.31742788158357144,
+      "noop_count_fraction_mean": 0.2710866192630899,
+      "enrichment_ratio_mean": 1.2189708656400855,
+      "enrichment_ratio_median": 1.1043076122348958,
+      "n_flipped_available": 15829
+    },
+    "A3_cls_contrastive": {
+      "n_samples": 200,
+      "noop_attr_fraction_mean": 0.31052196338772775,
+      "noop_count_fraction_mean": 0.2748173884938591,
+      "enrichment_ratio_mean": 1.171839489745497,
+      "enrichment_ratio_median": 1.0390308250983558,
+      "n_flipped_available": 8263
+    },
+    "A4_full": {
+      "n_samples": 200,
+      "noop_attr_fraction_mean": 0.2799192282557488,
+      "noop_count_fraction_mean": 0.27808661926308986,
+      "enrichment_ratio_mean": 1.0443031925425745,
+      "enrichment_ratio_median": 0.9584705357750257,
+      "n_flipped_available": 8368
+    }
+  },
+  "summary": {
+    "discussion_points": [
+      "TEMUAN JUJUR: enrichment mendekati 1 (B3=1.29, A4=1.04). Atribusi pada token no-op kurang-lebih PROPORSIONAL dengan frekuensinya \u2014 model TIDAK ber-fiksasi pada token no-op individual. Namun karena ~29% token adalah no-op hasil injeksi (rasio 30%), ini berarti ~30% massa 'bukti malicious' pada trace benign+no-op berasal dari token yang TIDAK punya semantik berbahaya. Jadi shortcut tetap terkonfirmasi, tetapi bekerja via DISRUPSI struktur n-gram lokal yang tersebar (konsisten dengan filter konv multi-skala kernel 3/5/7), bukan via fiksasi satu token. Ini mekanisme yang lebih halus daripada hipotesis 'token no-op = penanda malicious'.",
+      "A4 menaruh massa atribusi no-op sedikit LEBIH RENDAH (28.0%) dibanding B3 (33.8%; selisih 5.8pp) \u2014 directionally konsisten dengan artifact-FPR A4 yang ~1.9x lebih rendah (E4), tetapi selisihnya KECIL secara mekanistik. Penurunan FPR A4 kemungkinan lebih banyak dari kalibrasi/ketajaman skor daripada relokasi atribusi besar-besaran."
+    ]
+  }
+}

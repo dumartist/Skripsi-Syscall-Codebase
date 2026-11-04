@@ -1,0 +1,48 @@
+{
+  "n_segments": 10,
+  "threshold": 0.5,
+  "per_category": {
+    "Adduser": {
+      "mean": 0.7549019607843137,
+      "median": 1.0,
+      "n_high_containment": 38,
+      "n_never_blocked": 11,
+      "n_traces": 51
+    },
+    "Hydra_FTP": {
+      "mean": 0.8518518518518519,
+      "median": 1.0,
+      "n_high_containment": 67,
+      "n_never_blocked": 5,
+      "n_traces": 81
+    },
+    "Hydra_SSH": {
+      "mean": 0.7808988764044944,
+      "median": 1.0,
+      "n_high_containment": 59,
+      "n_never_blocked": 2,
+      "n_traces": 89
+    },
+    "Java_Meterpreter": {
+      "mean": 0.916923076923077,
+      "median": 1.0,
+      "n_high_containment": 59,
+      "n_never_blocked": 4,
+      "n_traces": 65
+    },
+    "Meterpreter": {
+      "mean": 0.8076923076923076,
+      "median": 1.0,
+      "n_high_containment": 30,
+      "n_never_blocked": 4,
+      "n_traces": 39
+    },
+    "Web_Shell": {
+      "mean": 0.86,
+      "median": 1.0,
+      "n_high_containment": 54,
+      "n_never_blocked": 5,
+      "n_traces": 65
+    }
+  }
+}

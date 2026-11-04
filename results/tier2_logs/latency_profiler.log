@@ -1,0 +1,20 @@
+======================================================================
+Section 4.4.5: Latency & Real-time Feasibility (B2)
+======================================================================
+
+[CPU] profiling...
+  batch=1   : forward=323.6us  total=331.3us  throughput=3,019 win/s
+  batch=256 : forward=63.62us/sample  throughput=15,706 win/s
+
+[CUDA] profiling...
+  batch=1   : forward=618.4us  total=636.1us  throughput=1,572 win/s
+  batch=256 : forward=6.37us/sample  throughput=155,677 win/s
+
+  Tokenisasi: 7.8 us/window  | Params: 106,658
+
+  Feasibilitas (stride=50 -> 1 window / 50 syscall baru):
+     10,000 syscall/s -> 200 window/s needed | batch1 OK (1,572) | batch256 OK (155,677)
+    100,000 syscall/s -> 2,000 window/s needed | batch1 NO (1,572) | batch256 OK (155,677)
+
+  Saved: results/latency_report.json
+======================================================================

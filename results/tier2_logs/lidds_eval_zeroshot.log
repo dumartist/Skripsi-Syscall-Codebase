@@ -1,0 +1,30 @@
+================================================================
+LID-DS Step 4: Zero-shot Transfer (ADFA model -> LID-DS)
+Device: cuda
+================================================================
+
+[CVE-2014-0160]
+  Test: 28347 window (1063 mal / 27284 benign)
+  Token coverage (freq-weighted): direct=90.9%  socket=5.1%  ipc=4.0%  unmapped=0.0%  unk=0.0%
+  Recall=0.0103  FPR=0.0096  F1=0.0165  AUC=0.4573  AUPRC=0.0359
+
+[Bruteforce_CWE-307]
+  Test: 147133 window (20766 mal / 126367 benign)
+  Token coverage (freq-weighted): direct=91.3%  socket=5.2%  ipc=3.5%  unmapped=0.0%  unk=0.0%
+  Recall=0.0006  FPR=0.0022  F1=0.0011  AUC=0.1467  AUPRC=0.0805
+
+[CWE-89-SQL-injection]
+  Test: 1497393 window (187954 mal / 1309439 benign)
+  Token coverage (freq-weighted): direct=69.0%  socket=29.8%  ipc=0.0%  unmapped=1.2%  unk=0.0%
+  Recall=0.0036  FPR=0.0053  F1=0.0068  AUC=0.4753  AUPRC=0.1131
+
+================================================================
+Ringkasan Zero-shot (Section 4.5.3):
+  Skenario                  Recall     FPR      F1     AUC   AUPRC
+  ----------------------------------------------------------------
+  CVE-2014-0160              0.010   0.010   0.016   0.457   0.036
+  Bruteforce_CWE-307         0.001   0.002   0.001   0.147   0.081
+  CWE-89-SQL-injection       0.004   0.005   0.007   0.475   0.113
+
+  Saved: results/lidds_zeroshot_report.json
+================================================================

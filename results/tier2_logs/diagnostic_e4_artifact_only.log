@@ -1,0 +1,71 @@
+========================================================================
+Diagnostic E4: Artifact-Only Injection + Honest Eval Composition
+Device: cuda
+========================================================================
+
+[1/3] Building evaluation populations...
+  benign=35680  malicious=2665
+  no-op token ids (from vocab): [16, 92, 94, 34, 13, 39]  (raw [20, 199, 201, 64, 13, 78])
+  injection ratio: 30%
+
+[2/3] Per-model evaluation...
+  B3_vanilla_cnn_seed42: clean-FPR=0.145  artifact-FPR=0.408  flip=0.308  honest-precision=0.110
+  B3_vanilla_cnn_seed123: clean-FPR=0.162  artifact-FPR=0.509  flip=0.415  honest-precision=0.094
+  B3_vanilla_cnn_seed456: clean-FPR=0.159  artifact-FPR=0.394  flip=0.280  honest-precision=0.114
+  B3_vanilla_cnn_seed789: clean-FPR=0.158  artifact-FPR=0.437  flip=0.333  honest-precision=0.106
+  B3_vanilla_cnn_seed1011: clean-FPR=0.154  artifact-FPR=0.491  flip=0.398  honest-precision=0.098
+  B3_vanilla_cnn_seed1213: clean-FPR=0.157  artifact-FPR=0.595  flip=0.520  honest-precision=0.086
+  B3_vanilla_cnn_seed1415: clean-FPR=0.165  artifact-FPR=0.488  flip=0.387  honest-precision=0.099
+  B3_vanilla_cnn_seed1617: clean-FPR=0.182  artifact-FPR=0.572  flip=0.478  honest-precision=0.086
+  B3_vanilla_cnn_seed1819: clean-FPR=0.153  artifact-FPR=0.494  flip=0.403  honest-precision=0.098
+  B3_vanilla_cnn_seed2021: clean-FPR=0.153  artifact-FPR=0.510  flip=0.421  honest-precision=0.097
+  A2_cls_robust_seed42: clean-FPR=0.146  artifact-FPR=0.444  flip=0.349  honest-precision=0.107
+  A2_cls_robust_seed123: clean-FPR=0.163  artifact-FPR=0.513  flip=0.419  honest-precision=0.095
+  A2_cls_robust_seed456: clean-FPR=0.158  artifact-FPR=0.383  flip=0.269  honest-precision=0.117
+  A2_cls_robust_seed789: clean-FPR=0.159  artifact-FPR=0.530  flip=0.441  honest-precision=0.095
+  A2_cls_robust_seed1011: clean-FPR=0.153  artifact-FPR=0.514  flip=0.426  honest-precision=0.096
+  A2_cls_robust_seed1213: clean-FPR=0.155  artifact-FPR=0.529  flip=0.442  honest-precision=0.095
+  A2_cls_robust_seed1415: clean-FPR=0.155  artifact-FPR=0.423  flip=0.319  honest-precision=0.111
+  A2_cls_robust_seed1617: clean-FPR=0.177  artifact-FPR=0.530  flip=0.430  honest-precision=0.092
+  A2_cls_robust_seed1819: clean-FPR=0.160  artifact-FPR=0.552  flip=0.468  honest-precision=0.092
+  A2_cls_robust_seed2021: clean-FPR=0.152  artifact-FPR=0.509  flip=0.421  honest-precision=0.098
+  A3_cls_contrastive_seed42: clean-FPR=0.145  artifact-FPR=0.232  flip=0.106  honest-precision=0.153
+  A3_cls_contrastive_seed123: clean-FPR=0.160  artifact-FPR=0.275  flip=0.139  honest-precision=0.136
+  A3_cls_contrastive_seed456: clean-FPR=0.149  artifact-FPR=0.217  flip=0.085  honest-precision=0.162
+  A3_cls_contrastive_seed789: clean-FPR=0.157  artifact-FPR=0.284  flip=0.154  honest-precision=0.138
+  A3_cls_contrastive_seed1011: clean-FPR=0.148  artifact-FPR=0.273  flip=0.148  honest-precision=0.141
+  A3_cls_contrastive_seed1213: clean-FPR=0.152  artifact-FPR=0.335  flip=0.217  honest-precision=0.127
+  A3_cls_contrastive_seed1415: clean-FPR=0.157  artifact-FPR=0.236  flip=0.098  honest-precision=0.152
+  A3_cls_contrastive_seed1617: clean-FPR=0.173  artifact-FPR=0.280  flip=0.132  honest-precision=0.135
+  A3_cls_contrastive_seed1819: clean-FPR=0.156  artifact-FPR=0.262  flip=0.128  honest-precision=0.145
+  A3_cls_contrastive_seed2021: clean-FPR=0.151  artifact-FPR=0.247  flip=0.115  honest-precision=0.150
+  A4_full_seed42: clean-FPR=0.146  artifact-FPR=0.235  flip=0.108  honest-precision=0.156
+  A4_full_seed123: clean-FPR=0.163  artifact-FPR=0.276  flip=0.136  honest-precision=0.140
+  A4_full_seed456: clean-FPR=0.154  artifact-FPR=0.227  flip=0.091  honest-precision=0.159
+  A4_full_seed789: clean-FPR=0.155  artifact-FPR=0.274  flip=0.143  honest-precision=0.143
+  A4_full_seed1011: clean-FPR=0.151  artifact-FPR=0.287  flip=0.162  honest-precision=0.139
+  A4_full_seed1213: clean-FPR=0.153  artifact-FPR=0.294  flip=0.168  honest-precision=0.137
+  A4_full_seed1415: clean-FPR=0.160  artifact-FPR=0.242  flip=0.100  honest-precision=0.151
+  A4_full_seed1617: clean-FPR=0.176  artifact-FPR=0.280  flip=0.128  honest-precision=0.135
+  A4_full_seed1819: clean-FPR=0.154  artifact-FPR=0.247  flip=0.112  honest-precision=0.152
+  A4_full_seed2021: clean-FPR=0.152  artifact-FPR=0.253  flip=0.121  honest-precision=0.151
+
+[3/3] Aggregating across seeds + verdict...
+  Saved: results\diagnostic_e4_artifact_only.json
+
+========================================================================
+AGGREGATE (mean across seeds)
+========================================================================
+  Model                     flip%     dFPR   honestP  honestF1  Verdict
+  ------------------------------------------------------------------------------
+  B3_vanilla_cnn            39.4%   +0.331     0.099     0.179  ARTIFACT_SHORTCUT_CONFIRMED
+  A2_cls_robust             39.8%   +0.335     0.100     0.180  ARTIFACT_SHORTCUT_CONFIRMED
+  A3_cls_contrastive        13.2%   +0.109     0.144     0.249  ARTIFACT_PARTIAL
+  A4_full                   12.7%   +0.105     0.146     0.254  ARTIFACT_PARTIAL
+
+[1] B3 (vanilla CNN, tanpa adversarial training) menandai 39.4% benign-artifact sebagai malicious. Karena tidak ada malware pada trace ini, deteksi murni bereaksi terhadap artefak injeksi no-op.
+
+[2] NUANSA PENTING: flip-rate A4 (full) = 12.7% vs B3 (vanilla) = 39.4% — A4 ~3.1x LEBIH rendah. Berbeda dari sumbu recall (diagnostic A1: A4 ~= B3, SHORTCUT_DOMINANT), pada sumbu FALSE-POSITIVE terhadap artefak no-op adversarial training (L_robust + L_contrastive) MEMBERI manfaat nyata: mengurangi kecenderungan menandai benign+no-op sebagai malicious. Diagnostic A1 hanya mengukur recall sehingga melewatkan kontribusi ini; E4 + komposisi eval jujur menyingkapnya. Inilah klaim kontribusi yang dapat dipertahankan: manfaat utama bukan AdvRec lebih tinggi, melainkan robustness FPR terhadap artefak injeksi.
+
+[3] KOMPOSISI EVAL (#0): precision pada set campuran (benign clean + benign artifact + malicious mimicry) TIDAK lagi 1.0 trivial seperti pada diagnostic_a1 (yang tn=fp=0). Gunakan precision/F1 'honest' ini untuk semua klaim robustness di paper.
+

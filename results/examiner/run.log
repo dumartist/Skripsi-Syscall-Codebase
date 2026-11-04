@@ -1,0 +1,485 @@
+
+=== stage pauc ===
+  C_B0_vanilla       pAUC(FPR<=5%) = 0.7094 +- 0.0153
+  C_B0_sym           pAUC(FPR<=5%) = 0.7011 +- 0.0084
+  C_AT_augment       pAUC(FPR<=5%) = 0.6962 +- 0.0144
+  C_A2_pairedKL      pAUC(FPR<=5%) = 0.7020 +- 0.0124
+  C_A3_contrastive   pAUC(FPR<=5%) = 0.7087 +- 0.0130
+  C_A4_full          pAUC(FPR<=5%) = 0.7007 +- 0.0134
+  C_CANON_dedup      pAUC(FPR<=5%) = 0.7298 +- 0.0122
+  C_CANON_strip      pAUC(FPR<=5%) = 0.7041 +- 0.0053
+  saved results/examiner/pauc.json
+
+=== stage boot ===
+  C_B0_vanilla       recall 0.9328 CI[0.8895 0.9653]  FPR 0.1452 CI[0.1297 0.1614]
+  C_B0_sym           recall 0.9475 CI[0.9164 0.9718]  FPR 0.1474 CI[0.1319 0.1638]
+  C_AT_augment       recall 0.9347 CI[0.897  0.9641]  FPR 0.1313 CI[0.1166 0.1472]
+  C_A2_pairedKL      recall 0.9370 CI[0.897  0.9665]  FPR 0.1459 CI[0.1303 0.1624]
+  C_A3_contrastive   recall 0.9325 CI[0.8901 0.9635]  FPR 0.1446 CI[0.1291 0.161 ]
+  C_A4_full          recall 0.9373 CI[0.8971 0.9672]  FPR 0.1456 CI[0.1299 0.1621]
+  C_CANON_dedup      recall 0.9321 CI[0.8883 0.965 ]  FPR 0.1394 CI[0.1242 0.1547]
+  C_CANON_strip      recall 0.9460 CI[0.9072 0.9733]  FPR 0.1492 CI[0.1345 0.1653]
+  adaptive C_A2_pairedKL      <=10%: diff -7.4pp seed-only [-11.2  -3.6] seed+trace [-10.8  -4.2]
+  adaptive C_A4_full          <=10%: diff -6.2pp seed-only [-10.   -2.4] seed+trace [-9.7 -2.8]
+  adaptive C_AT_augment       <=10%: diff +14.6pp seed-only [ 6.9 22.4] seed+trace [ 7.9 20.9]
+  adaptive C_B0_sym           <=10%: diff -2.1pp seed-only [-6.7  2.4] seed+trace [-6.2  1.7]
+  adaptive C_A3_contrastive   <=10%: diff +3.4pp seed-only [-2.   8.7] seed+trace [-1.4  8.1]
+  saved results/examiner/bootstrap.json
+
+=== stage prev ===
+  window_tau0.50         pi=0.0695  TPR=0.937 FPR=0.146 PPV=0.3247 false/true=2.1
+  window_tau0.50         pi=0.01    TPR=0.937 FPR=0.146 PPV=0.0610 false/true=15.4
+  window_tau0.50         pi=0.001   TPR=0.937 FPR=0.146 PPV=0.0064 false/true=155.2
+  window_tau0.67_Cfp5    pi=0.0695  TPR=0.898 FPR=0.111 PPV=0.3762 false/true=1.7
+  window_tau0.67_Cfp5    pi=0.01    TPR=0.898 FPR=0.111 PPV=0.0754 false/true=12.3
+  window_tau0.67_Cfp5    pi=0.001   TPR=0.898 FPR=0.111 PPV=0.0080 false/true=123.7
+  trace_mean_tau0.50     pi=0.0695  TPR=0.903 FPR=0.107 PPV=0.3874 false/true=1.6
+  trace_mean_tau0.50     pi=0.01    TPR=0.903 FPR=0.107 PPV=0.0788 false/true=11.7
+  trace_mean_tau0.50     pi=0.001   TPR=0.903 FPR=0.107 PPV=0.0084 false/true=118.0
+  saved results/examiner/prevalence.json
+
+=== stage alphabeta ===
+  a=0.0 b=0.0 seed=42: F1=0.4812 DA=0.9111 ev10=0.430 dFPR=+0.259
+  a=0.0 b=0.0 seed=123: F1=0.4609 DA=0.9347 ev10=0.515 dFPR=+0.349
+  a=0.0 b=0.0 seed=456: F1=0.4691 DA=0.9542 ev10=0.375 dFPR=+0.233
+  a=0.0 b=0.0 seed=789: F1=0.4690 DA=0.9407 ev10=0.490 dFPR=+0.285
+  a=0.0 b=0.0 seed=1011: F1=0.4677 DA=0.9377 ev10=0.440 dFPR=+0.338
+  a=0.0 b=0.1 seed=42: F1=0.4820 DA=0.9133 ev10=0.445 dFPR=+0.092
+  a=0.0 b=0.1 seed=123: F1=0.4629 DA=0.9156 ev10=0.470 dFPR=+0.119
+  a=0.0 b=0.1 seed=456: F1=0.4833 DA=0.9426 ev10=0.490 dFPR=+0.069
+  a=0.0 b=0.1 seed=789: F1=0.4713 DA=0.9418 ev10=0.475 dFPR=+0.135
+  a=0.0 b=0.1 seed=1011: F1=0.4799 DA=0.9276 ev10=0.540 dFPR=+0.121
+
+  [C_AB_a0.0_b0.3] seed=42 alpha=0.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9318  test: F1=0.4788 recall=0.9392 FPR=0.1482 prec=0.3213 | DA_rec=0.9144
+  a=0.0 b=0.3 seed=42: F1=0.4788 DA=0.9144 ev10=0.400 dFPR=+0.068
+
+  [C_AB_a0.0_b0.3] seed=123 alpha=0.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9519  test: F1=0.4592 recall=0.9396 FPR=0.1608 prec=0.3039 | DA_rec=0.9332
+  a=0.0 b=0.3 seed=123: F1=0.4592 DA=0.9332 ev10=0.405 dFPR=+0.076
+
+  [C_AB_a0.0_b0.3] seed=456 alpha=0.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9667  test: F1=0.4785 recall=0.9527 FPR=0.1516 prec=0.3195 | DA_rec=0.9460
+  a=0.0 b=0.3 seed=456: F1=0.4785 DA=0.9460 ev10=0.445 dFPR=+0.053
+
+  [C_AB_a0.0_b0.3] seed=789 alpha=0.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9691  test: F1=0.4721 recall=0.9535 FPR=0.1558 prec=0.3137 | DA_rec=0.9501
+  a=0.0 b=0.3 seed=789: F1=0.4721 DA=0.9501 ev10=0.435 dFPR=+0.097
+
+  [C_AB_a0.0_b0.3] seed=1011 alpha=0.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9250  test: F1=0.4720 recall=0.9347 FPR=0.1513 prec=0.3158 | DA_rec=0.9403
+  a=0.0 b=0.3 seed=1011: F1=0.4720 DA=0.9403 ev10=0.425 dFPR=+0.087
+
+  [C_AB_a0.5_b0.0] seed=42 alpha=0.5 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9329  test: F1=0.4818 recall=0.9377 FPR=0.1460 prec=0.3242 | DA_rec=0.9407
+  a=0.5 b=0.0 seed=42: F1=0.4818 DA=0.9407 ev10=0.380 dFPR=+0.284
+
+  [C_AB_a0.5_b0.0] seed=123 alpha=0.5 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9482  test: F1=0.4607 recall=0.9535 FPR=0.1632 prec=0.3038 | DA_rec=0.9632
+  a=0.5 b=0.0 seed=123: F1=0.4607 DA=0.9632 ev10=0.365 dFPR=+0.362
+
+  [C_AB_a0.5_b0.0] seed=456 alpha=0.5 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9711  test: F1=0.4766 recall=0.9568 FPR=0.1537 prec=0.3174 | DA_rec=0.9614
+  a=0.5 b=0.0 seed=456: F1=0.4766 DA=0.9614 ev10=0.385 dFPR=+0.187
+
+  [C_AB_a0.5_b0.0] seed=789 alpha=0.5 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9756  test: F1=0.4709 recall=0.9580 FPR=0.1577 prec=0.3121 | DA_rec=0.9625
+  a=0.5 b=0.0 seed=789: F1=0.4709 DA=0.9625 ev10=0.365 dFPR=+0.341
+
+  [C_AB_a0.5_b0.0] seed=1011 alpha=0.5 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9295  test: F1=0.4734 recall=0.9400 FPR=0.1517 prec=0.3163 | DA_rec=0.9430
+  a=0.5 b=0.0 seed=1011: F1=0.4734 DA=0.9430 ev10=0.425 dFPR=+0.342
+
+  [C_AB_a0.5_b0.1] seed=42 alpha=0.5 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9332  test: F1=0.4827 recall=0.9392 FPR=0.1458 prec=0.3248 | DA_rec=0.9437
+  a=0.5 b=0.1 seed=42: F1=0.4827 DA=0.9437 ev10=0.380 dFPR=+0.098
+
+  [C_AB_a0.5_b0.1] seed=123 alpha=0.5 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9512  test: F1=0.4638 recall=0.9490 FPR=0.1601 prec=0.3069 | DA_rec=0.9542
+  a=0.5 b=0.1 seed=123: F1=0.4638 DA=0.9542 ev10=0.380 dFPR=+0.107
+
+  [C_AB_a0.5_b0.1] seed=456 alpha=0.5 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9682  test: F1=0.4778 recall=0.9550 FPR=0.1526 prec=0.3186 | DA_rec=0.9621
+  a=0.5 b=0.1 seed=456: F1=0.4778 DA=0.9621 ev10=0.410 dFPR=+0.068
+
+  [C_AB_a0.5_b0.1] seed=789 alpha=0.5 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9702  test: F1=0.4744 recall=0.9561 FPR=0.1550 prec=0.3154 | DA_rec=0.9606
+  a=0.5 b=0.1 seed=789: F1=0.4744 DA=0.9606 ev10=0.400 dFPR=+0.130
+
+  [C_AB_a0.5_b0.1] seed=1011 alpha=0.5 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9275  test: F1=0.4780 recall=0.9313 FPR=0.1468 prec=0.3215 | DA_rec=0.9385
+  a=0.5 b=0.1 seed=1011: F1=0.4780 DA=0.9385 ev10=0.430 dFPR=+0.103
+
+  [C_AB_a0.5_b0.3] seed=42 alpha=0.5 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9195  test: F1=0.4738 recall=0.9508 FPR=0.1541 prec=0.3155 | DA_rec=0.9542
+  a=0.5 b=0.3 seed=42: F1=0.4738 DA=0.9542 ev10=0.345 dFPR=+0.090
+
+  [C_AB_a0.5_b0.3] seed=123 alpha=0.5 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9481  test: F1=0.4589 recall=0.9497 FPR=0.1635 prec=0.3025 | DA_rec=0.9542
+  a=0.5 b=0.3 seed=123: F1=0.4589 DA=0.9542 ev10=0.365 dFPR=+0.075
+
+  [C_AB_a0.5_b0.3] seed=456 alpha=0.5 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9652  test: F1=0.4631 recall=0.9531 FPR=0.1616 prec=0.3058 | DA_rec=0.9591
+  a=0.5 b=0.3 seed=456: F1=0.4631 DA=0.9591 ev10=0.380 dFPR=+0.063
+
+  [C_AB_a0.5_b0.3] seed=789 alpha=0.5 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9691  test: F1=0.4718 recall=0.9516 FPR=0.1555 prec=0.3137 | DA_rec=0.9568
+  a=0.5 b=0.3 seed=789: F1=0.4718 DA=0.9568 ev10=0.375 dFPR=+0.084
+
+  [C_AB_a0.5_b0.3] seed=1011 alpha=0.5 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9262  test: F1=0.4762 recall=0.9291 FPR=0.1474 prec=0.3201 | DA_rec=0.9366
+  a=0.5 b=0.3 seed=1011: F1=0.4762 DA=0.9366 ev10=0.395 dFPR=+0.064
+  a=1.0 b=0.0 seed=42: F1=0.4816 DA=0.9426 ev10=0.380 dFPR=+0.295
+  a=1.0 b=0.0 seed=123: F1=0.4611 DA=0.9535 ev10=0.380 dFPR=+0.354
+  a=1.0 b=0.0 seed=456: F1=0.4710 DA=0.9621 ev10=0.355 dFPR=+0.224
+  a=1.0 b=0.0 seed=789: F1=0.4680 DA=0.9632 ev10=0.360 dFPR=+0.373
+  a=1.0 b=0.0 seed=1011: F1=0.4712 DA=0.9430 ev10=0.420 dFPR=+0.357
+  a=1.0 b=0.1 seed=42: F1=0.4823 DA=0.9377 ev10=0.390 dFPR=+0.092
+  a=1.0 b=0.1 seed=123: F1=0.4605 DA=0.9580 ev10=0.370 dFPR=+0.116
+  a=1.0 b=0.1 seed=456: F1=0.4757 DA=0.9606 ev10=0.405 dFPR=+0.070
+  a=1.0 b=0.1 seed=789: F1=0.4739 DA=0.9591 ev10=0.405 dFPR=+0.126
+  a=1.0 b=0.1 seed=1011: F1=0.4746 DA=0.9463 ev10=0.385 dFPR=+0.134
+
+  [C_AB_a1.0_b0.3] seed=42 alpha=1.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9186  test: F1=0.4768 recall=0.9392 FPR=0.1494 prec=0.3195 | DA_rec=0.9411
+  a=1.0 b=0.3 seed=42: F1=0.4768 DA=0.9411 ev10=0.375 dFPR=+0.071
+
+  [C_AB_a1.0_b0.3] seed=123 alpha=1.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9477  test: F1=0.4575 recall=0.9452 FPR=0.1634 prec=0.3017 | DA_rec=0.9520
+  a=1.0 b=0.3 seed=123: F1=0.4575 DA=0.9520 ev10=0.365 dFPR=+0.075
+
+  [C_AB_a1.0_b0.3] seed=456 alpha=1.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9667  test: F1=0.4673 recall=0.9512 FPR=0.1584 prec=0.3097 | DA_rec=0.9568
+  a=1.0 b=0.3 seed=456: F1=0.4673 DA=0.9568 ev10=0.380 dFPR=+0.058
+
+  [C_AB_a1.0_b0.3] seed=789 alpha=1.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9669  test: F1=0.4697 recall=0.9531 FPR=0.1572 prec=0.3117 | DA_rec=0.9557
+  a=1.0 b=0.3 seed=789: F1=0.4697 DA=0.9557 ev10=0.360 dFPR=+0.091
+
+  [C_AB_a1.0_b0.3] seed=1011 alpha=1.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9275  test: F1=0.4746 recall=0.9313 FPR=0.1489 prec=0.3184 | DA_rec=0.9373
+  a=1.0 b=0.3 seed=1011: F1=0.4746 DA=0.9373 ev10=0.390 dFPR=+0.063
+
+  [C_AB_a2.0_b0.0] seed=42 alpha=2.0 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9276  test: F1=0.4788 recall=0.9381 FPR=0.1479 prec=0.3215 | DA_rec=0.9445
+  a=2.0 b=0.0 seed=42: F1=0.4788 DA=0.9445 ev10=0.380 dFPR=+0.318
+
+  [C_AB_a2.0_b0.0] seed=123 alpha=2.0 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9457  test: F1=0.4618 recall=0.9471 FPR=0.1610 prec=0.3053 | DA_rec=0.9508
+  a=2.0 b=0.0 seed=123: F1=0.4618 DA=0.9508 ev10=0.375 dFPR=+0.335
+
+  [C_AB_a2.0_b0.0] seed=456 alpha=2.0 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9683  test: F1=0.4639 recall=0.9598 FPR=0.1627 prec=0.3058 | DA_rec=0.9636
+  a=2.0 b=0.0 seed=456: F1=0.4639 DA=0.9636 ev10=0.350 dFPR=+0.267
+
+  [C_AB_a2.0_b0.0] seed=789 alpha=2.0 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9744  test: F1=0.4654 recall=0.9542 FPR=0.1603 prec=0.3078 | DA_rec=0.9595
+  a=2.0 b=0.0 seed=789: F1=0.4654 DA=0.9595 ev10=0.350 dFPR=+0.365
+
+  [C_AB_a2.0_b0.0] seed=1011 alpha=2.0 beta=0.0 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9308  test: F1=0.4677 recall=0.9418 FPR=0.1558 prec=0.3111 | DA_rec=0.9433
+  a=2.0 b=0.0 seed=1011: F1=0.4677 DA=0.9433 ev10=0.405 dFPR=+0.386
+
+  [C_AB_a2.0_b0.1] seed=42 alpha=2.0 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9225  test: F1=0.4770 recall=0.9490 FPR=0.1516 prec=0.3186 | DA_rec=0.9531
+  a=2.0 b=0.1 seed=42: F1=0.4770 DA=0.9531 ev10=0.355 dFPR=+0.126
+
+  [C_AB_a2.0_b0.1] seed=123 alpha=2.0 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9485  test: F1=0.4653 recall=0.9385 FPR=0.1565 prec=0.3093 | DA_rec=0.9407
+  a=2.0 b=0.1 seed=123: F1=0.4653 DA=0.9407 ev10=0.400 dFPR=+0.107
+
+  [C_AB_a2.0_b0.1] seed=456 alpha=2.0 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9682  test: F1=0.4684 recall=0.9535 FPR=0.1582 prec=0.3105 | DA_rec=0.9591
+  a=2.0 b=0.1 seed=456: F1=0.4684 DA=0.9591 ev10=0.385 dFPR=+0.074
+
+  [C_AB_a2.0_b0.1] seed=789 alpha=2.0 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9712  test: F1=0.4718 recall=0.9516 FPR=0.1555 prec=0.3136 | DA_rec=0.9535
+  a=2.0 b=0.1 seed=789: F1=0.4718 DA=0.9535 ev10=0.390 dFPR=+0.130
+
+  [C_AB_a2.0_b0.1] seed=1011 alpha=2.0 beta=0.1 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9250  test: F1=0.4749 recall=0.9325 FPR=0.1490 prec=0.3186 | DA_rec=0.9377
+  a=2.0 b=0.1 seed=1011: F1=0.4749 DA=0.9377 ev10=0.415 dFPR=+0.130
+
+  [C_AB_a2.0_b0.3] seed=42 alpha=2.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9171  test: F1=0.4686 recall=0.9467 FPR=0.1564 prec=0.3113 | DA_rec=0.9508
+  a=2.0 b=0.3 seed=42: F1=0.4686 DA=0.9508 ev10=0.355 dFPR=+0.085
+
+  [C_AB_a2.0_b0.3] seed=123 alpha=2.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9475  test: F1=0.4561 recall=0.9261 FPR=0.1594 prec=0.3026 | DA_rec=0.9325
+  a=2.0 b=0.3 seed=123: F1=0.4561 DA=0.9325 ev10=0.415 dFPR=+0.071
+
+  [C_AB_a2.0_b0.3] seed=456 alpha=2.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9667  test: F1=0.4666 recall=0.9501 FPR=0.1585 prec=0.3092 | DA_rec=0.9550
+  a=2.0 b=0.3 seed=456: F1=0.4666 DA=0.9550 ev10=0.385 dFPR=+0.064
+
+  [C_AB_a2.0_b0.3] seed=789 alpha=2.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9680  test: F1=0.4709 recall=0.9542 FPR=0.1567 prec=0.3126 | DA_rec=0.9580
+  a=2.0 b=0.3 seed=789: F1=0.4709 DA=0.9580 ev10=0.390 dFPR=+0.088
+
+  [C_AB_a2.0_b0.3] seed=1011 alpha=2.0 beta=0.3 augment_adv=False canon=none
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+C:\Users\ADMIN\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\metrics\_ranking.py:442: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+    val_f1=0.9275  test: F1=0.4710 recall=0.9313 FPR=0.1511 prec=0.3152 | DA_rec=0.9370
+  a=2.0 b=0.3 seed=1011: F1=0.4710 DA=0.9370 ev10=0.370 dFPR=+0.069
+  saved results/examiner/alphabeta_sensitivity.json
+
+=== stage b1 ===
+  B1-RF seed 42: F1=0.5590 rec=0.9343 FPR=0.1052 DA=0.8807 adaptive={'n_detected_of_200': 188, 'le_10': 0.4095744680851064, 'le_20': 0.601063829787234, 'le_30': 0.6808510638297872}
+  B1-SVM seed 42: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive={'n_detected_of_200': 187, 'le_10': 0.48128342245989303, 'le_20': 0.8609625668449198, 'le_30': 0.9197860962566845}
+  B1-RF seed 123: F1=0.5607 rec=0.9328 FPR=0.1042 DA=0.8754 adaptive={'n_detected_of_200': 190, 'le_10': 0.41578947368421054, 'le_20': 0.631578947368421, 'le_30': 0.6894736842105263}
+  B1-SVM seed 123: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive={'n_detected_of_200': 190, 'le_10': 0.5263157894736842, 'le_20': 0.8315789473684211, 'le_30': 0.9473684210526315}
+  B1-RF seed 456: F1=0.5585 rec=0.9313 FPR=0.1048 DA=0.8803 adaptive={'n_detected_of_200': 189, 'le_10': 0.43386243386243384, 'le_20': 0.6931216931216931, 'le_30': 0.7513227513227513}
+  B1-SVM seed 456: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive={'n_detected_of_200': 188, 'le_10': 0.5106382978723404, 'le_20': 0.8351063829787234, 'le_30': 0.925531914893617}
+  B1-RF seed 789: F1=0.5601 rec=0.9336 FPR=0.1046 DA=0.8788 adaptive={'n_detected_of_200': 190, 'le_10': 0.45789473684210524, 'le_20': 0.6421052631578947, 'le_30': 0.7052631578947368}
+  B1-SVM seed 789: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive={'n_detected_of_200': 190, 'le_10': 0.5210526315789473, 'le_20': 0.8263157894736842, 'le_30': 0.9210526315789473}
+  B1-RF seed 1011: F1=0.5587 rec=0.9317 FPR=0.1048 DA=0.8795 adaptive={'n_detected_of_200': 184, 'le_10': 0.4076086956521739, 'le_20': 0.6358695652173914, 'le_30': 0.6793478260869565}
+  B1-SVM seed 1011: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive={'n_detected_of_200': 188, 'le_10': 0.5159574468085106, 'le_20': 0.8031914893617021, 'le_30': 0.9042553191489362}
+  B1-RF seed 1213: F1=0.5595 rec=0.9302 FPR=0.1042 DA=0.8780 adaptive=None
+  B1-SVM seed 1213: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive=None
+  B1-RF seed 1415: F1=0.5598 rec=0.9336 FPR=0.1047 DA=0.8803 adaptive=None
+  B1-SVM seed 1415: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive=None
+  B1-RF seed 1617: F1=0.5599 rec=0.9332 FPR=0.1046 DA=0.8732 adaptive=None
+  B1-SVM seed 1617: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive=None
+  B1-RF seed 1819: F1=0.5602 rec=0.9343 FPR=0.1047 DA=0.8765 adaptive=None
+  B1-SVM seed 1819: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive=None
+  B1-RF seed 2021: F1=0.5594 rec=0.9336 FPR=0.1049 DA=0.8780 adaptive=None
+  B1-SVM seed 2021: F1=0.5543 rec=0.9392 FPR=0.1083 DA=0.8976 adaptive=None
+  saved results/examiner/b1_rf_svm.json

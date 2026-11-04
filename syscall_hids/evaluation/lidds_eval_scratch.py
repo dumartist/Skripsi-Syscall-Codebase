@@ -1,5 +1,5 @@
 """
-LID-DS Step 6: From-scratch Training & Evaluation (Section 4.5.5 / Mode A)
+LID-DS Step 6: From-scratch Training & Evaluation
 
 Melatih arsitektur Multi-Scale CNN dari nol pada LID-DS menggunakan
 vocabulary native (69 token). Ini adalah baseline cross-dataset paling fair
@@ -153,7 +153,7 @@ def main():
         json.dump(report, f, indent=2, default=float)
 
     print("\n" + "=" * 64)
-    print("Ringkasan From-scratch (Section 4.5.5):")
+    print("Ringkasan From-scratch:")
     print(f"  {'Skenario':<24}{'Recall':>8}{'FPR':>8}{'F1':>8}{'AUC':>8}{'AUPRC':>8}")
     print("  " + "-" * 64)
     for scn, r in report["scenarios"].items():

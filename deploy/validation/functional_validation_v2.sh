@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# functional_validation_v2.sh — #1 / LEVEL 3: bukti ΦF MULTI-PAYLOAD.
+# Check functional preservation across several workloads.
 #
 # Memperluas validasi fungsional dari satu kelas (Hydra) ke TIGA kelas serangan
 # yang memetakan ke kategori ADFA, semua dijalankan NYATA, lokal, terisolasi:

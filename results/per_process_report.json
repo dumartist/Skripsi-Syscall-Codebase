@@ -1,0 +1,18 @@
+{
+  "threshold": 0.5,
+  "per_window": {
+    "abr": 0.9373358348968105,
+    "fpr": 0.14562780269058295,
+    "n_windows": 38345
+  },
+  "per_process_max": {
+    "abr": 0.9230769230769231,
+    "fpr": 0.1605672461116194
+  },
+  "per_process_mean": {
+    "abr": 0.9025641025641026,
+    "fpr": 0.10658737419945105
+  },
+  "n_processes": 4762,
+  "isolated_fp_benign_saved_by_mean": 236
+}

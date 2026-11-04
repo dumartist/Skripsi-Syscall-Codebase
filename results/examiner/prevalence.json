@@ -1,0 +1,93 @@
+{
+  "formula": "PPV = pi*TPR / (pi*TPR + (1-pi)*FPR)",
+  "windows_per_second_host": 470.0,
+  "rows": [
+    {
+      "operating_point": "window_tau0.50",
+      "prevalence": 0.0695,
+      "tpr": 0.9373358348968105,
+      "fpr": 0.14562780269058295,
+      "ppv": 0.32466658348965544,
+      "false_alarms_per_1000_benign": 145.62780269058294,
+      "false_per_true_alarm": 2.0800829246163,
+      "false_alarms_per_hour_at_host_rate": 229277.28632286994
+    },
+    {
+      "operating_point": "window_tau0.50",
+      "prevalence": 0.01,
+      "tpr": 0.9373358348968105,
+      "fpr": 0.14562780269058295,
+      "ppv": 0.06104637396608104,
+      "false_alarms_per_1000_benign": 145.62780269058294,
+      "false_per_true_alarm": 15.380989320604465,
+      "false_alarms_per_hour_at_host_rate": 243938.2197309417
+    },
+    {
+      "operating_point": "window_tau0.50",
+      "prevalence": 0.001,
+      "tpr": 0.9373358348968105,
+      "fpr": 0.14562780269058295,
+      "ppv": 0.0064017140220570395,
+      "false_alarms_per_1000_benign": 145.62780269058294,
+      "false_per_true_alarm": 155.20816496246323,
+      "false_alarms_per_hour_at_host_rate": 246155.8399103139
+    },
+    {
+      "operating_point": "window_tau0.67_Cfp5",
+      "prevalence": 0.0695,
+      "tpr": 0.8975609756097561,
+      "fpr": 0.11118273542600897,
+      "ppv": 0.3761576443508795,
+      "false_alarms_per_1000_benign": 111.18273542600897,
+      "false_per_true_alarm": 1.6584598638840924,
+      "false_alarms_per_hour_at_host_rate": 175046.76575112107
+    },
+    {
+      "operating_point": "window_tau0.67_Cfp5",
+      "prevalence": 0.01,
+      "tpr": 0.8975609756097561,
+      "fpr": 0.11118273542600897,
+      "ppv": 0.07539581938110294,
+      "false_alarms_per_1000_benign": 111.18273542600897,
+      "false_per_true_alarm": 12.263334866689412,
+      "false_alarms_per_hour_at_host_rate": 186239.9764573991
+    },
+    {
+      "operating_point": "window_tau0.67_Cfp5",
+      "prevalence": 0.001,
+      "tpr": 0.8975609756097561,
+      "fpr": 0.11118273542600897,
+      "ppv": 0.00801614790205096,
+      "false_alarms_per_1000_benign": 111.18273542600897,
+      "false_per_true_alarm": 123.74819729113861,
+      "false_alarms_per_hour_at_host_rate": 187933.06715246636
+    },
+    {
+      "operating_point": "trace_mean_tau0.50",
+      "prevalence": 0.0695,
+      "tpr": 0.9025641025641026,
+      "fpr": 0.10658737419945105,
+      "ppv": 0.3874317473105078,
+      "false_alarms_per_1000_benign": 106.58737419945105,
+      "false_per_true_alarm": 1.5810997858122051
+    },
+    {
+      "operating_point": "trace_mean_tau0.50",
+      "prevalence": 0.01,
+      "tpr": 0.9025641025641026,
+      "fpr": 0.10658737419945105,
+      "ppv": 0.0787941183759076,
+      "false_alarms_per_1000_benign": 106.58737419945105,
+      "false_per_true_alarm": 11.691302607502287
+    },
+    {
+      "operating_point": "trace_mean_tau0.50",
+      "prevalence": 0.001,
+      "tpr": 0.9025641025641026,
+      "fpr": 0.10658737419945105,
+      "ppv": 0.008405065541033603,
+      "false_alarms_per_1000_benign": 106.58737419945105,
+      "false_per_true_alarm": 117.97587176661399
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+========================================================================
+Diagnostic #2a: Integrated Gradients — atribusi token no-op
+Device: cuda | IG steps: 50 | max samples: 200
+========================================================================
+
+benign-artifact pool: 35680  no-op tokens: [16, 92, 94, 34, 13, 39] (+UNK=1)
+
+Model                  noop_attr% noop_freq%  enrichment  interpretasi
+------------------------------------------------------------------------------
+B3_vanilla_cnn              33.8%      27.0%        1.29  no-op proporsional
+A2_cls_robust               31.7%      27.1%        1.22  no-op proporsional
+A3_cls_contrastive          31.1%      27.5%        1.17  no-op proporsional
+A4_full                     28.0%      27.8%        1.04  no-op proporsional
+
+Saved: results\diagnostic_attribution.json
+
+[1] TEMUAN JUJUR: enrichment mendekati 1 (B3=1.29, A4=1.04). Atribusi pada token no-op kurang-lebih PROPORSIONAL dengan frekuensinya — model TIDAK ber-fiksasi pada token no-op individual. Namun karena ~29% token adalah no-op hasil injeksi (rasio 30%), ini berarti ~30% massa 'bukti malicious' pada trace benign+no-op berasal dari token yang TIDAK punya semantik berbahaya. Jadi shortcut tetap terkonfirmasi, tetapi bekerja via DISRUPSI struktur n-gram lokal yang tersebar (konsisten dengan filter konv multi-skala kernel 3/5/7), bukan via fiksasi satu token. Ini mekanisme yang lebih halus daripada hipotesis 'token no-op = penanda malicious'.
+
+[2] A4 menaruh massa atribusi no-op sedikit LEBIH RENDAH (28.0%) dibanding B3 (33.8%; selisih 5.8pp) — directionally konsisten dengan artifact-FPR A4 yang ~1.9x lebih rendah (E4), tetapi selisihnya KECIL secara mekanistik. Penurunan FPR A4 kemungkinan lebih banyak dari kalibrasi/ketajaman skor daripada relokasi atribusi besar-besaran.
+

@@ -1,14 +1,14 @@
-"""Diagnostic quantities for the manuscript, recomputed on the corrected run.
+"""Diagnostic quantities, recomputed on the corrected run.
 
-  §4.9   static-mimicry comparison: paired (per-seed) differences vs B0 with 95% CI,
+  static-mimicry comparison: paired (per-seed) differences vs B0 with 95% CI,
          Cohen's d and Holm-adjusted p. No pass/fail threshold — the old ">=5 pp =
          genuine" rule was unreachable near the recall ceiling and is removed.
-  §4.10  paired robustness on Distribution-Aware mimicry (seed 42).
-  §4.11  benign + injected-token FPR, with a LENGTH CONTROL: inserting the same
+  paired robustness on Distribution-Aware mimicry (seed 42).
+  benign + injected-token FPR, with a LENGTH CONTROL: inserting the same
          number of benign-frequent non-no-op tokens. If FPR rises under no-op
          insertion but not under the control, sequence length/padding is not
          what drives it.
-  §4.12  adaptive evasion: paired per-seed differences vs B0 (every pipeline is
+  adaptive evasion: paired per-seed differences vs B0 (every pipeline is
          attacked on the same traces per seed — see adaptive_eval.py).
 
 Inputs : results/corrected_full.json, results/adaptive_full.json, checkpoints.
@@ -158,18 +158,18 @@ def main():
     with open(RES / "corrected_analysis.json", "w") as f:
         json.dump(report, f, indent=2, default=float)
 
-    print("\n== §4.9 static recall vs B0 (paired, 10 seeds, Holm) ==")
+    print("\n== static recall vs B0 (paired, 10 seeds, Holm) ==")
     for k, d in report["static_vs_B0_4_9"].items():
         print(f"  {k:42s} diff={d['diff']*100:+.2f}pp CI=[{d['ci95'][0]*100:+.2f},"
               f"{d['ci95'][1]*100:+.2f}] dz={d['cohens_dz']:+.2f} p_holm={d['p_holm']:.3g}")
-    print("\n== §4.10 paired robustness (DA, seed 42) ==")
+    print("\n== paired robustness (DA, seed 42) ==")
     pr = report["paired_robustness_4_10"]
     print(f"  windows={pr['n_windows']} traces={pr['n_traces']}")
     for t in ["C_B0_vanilla", "C_A2_pairedKL", "C_A3_contrastive", "C_A4_full"]:
         d = pr[t]
         print(f"  {t:18s} RR={d['RR']:.4f} missed->recovered {d['clean_missed']}->"
               f"{d['recovered']} ({d['recovery_rate']:.1%})")
-    print("\n== §4.11 benign FPR: clean / +no-op 5,10,30% / +benign-token 30% (control) ==")
+    print("\n== benign FPR: clean / +no-op 5,10,30% / +benign-token 30% (control) ==")
     for t, d in report["injected_fpr_4_11"].items():
         if not isinstance(d, dict):
             continue
@@ -177,7 +177,7 @@ def main():
               f"{d['noop_30'][0]:.3f} / ctrl {d['benigntok_30'][0]:.3f}  "
               f"inc_noop={d['increase_noop_30']['diff']*100:+.1f}pp "
               f"inc_ctrl={d['increase_benigntok_30']['diff']*100:+.1f}pp")
-    print("\n== §4.12 adaptive evasion vs B0 (paired on common traces, Holm) ==")
+    print("\n== adaptive evasion vs B0 (paired on common traces, Holm) ==")
     for k, d in report["adaptive_vs_B0_4_12"].items():
         if "le_10" in k:
             print(f"  {k:44s} diff={d['diff']*100:+.1f}pp CI=[{d['ci95'][0]*100:+.1f},"

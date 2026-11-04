@@ -6,21 +6,10 @@
 /Dafpus/
 *.zip
 
-# Data turunan, model, dan output eksperimen
-/prepared_data/
-/prepared_data_lidds/
-/adversarial_data/
+# Artefak lama dan keluaran opsional
 /adversarial_data_pre_fix/
-/models/
-/results/
-*.npz
-*.npy
-*.pkl
-*.pt
-*.pth
-*.ckpt
-*.onnx
-*.log
+/results/figures/
+/results/appendix_*.json
 *.so
 
 # Artefak penulisan dan presentasi yang tidak termasuk codebase

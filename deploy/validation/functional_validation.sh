@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# functional_validation.sh — #4 / LEVEL 3: bukti eksekusional ΦF.
+# Check whether the workload still succeeds with syscall injection enabled.
 #
 # Menjalankan serangan NYATA (Hydra SSH brute-force, kelas = ADFA Hydra_SSH)
 # dua kali: (A) baseline, (B) dengan shim no-op injection. Membuktikan:

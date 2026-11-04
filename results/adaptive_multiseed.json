@@ -1,0 +1,268 @@
+{
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "n": 200,
+  "runs": {
+    "C_B0_vanilla": [
+      {
+        "recall_clean": 0.9572232645403377,
+        "n_attacked": 200,
+        "evasion_final": 0.885,
+        "evasion_le_10pct": 0.445,
+        "evasion_le_20pct": 0.82,
+        "evasion_le_30pct": 0.885
+      },
+      {
+        "recall_clean": 0.9530956848030019,
+        "n_attacked": 200,
+        "evasion_final": 0.94,
+        "evasion_le_10pct": 0.37,
+        "evasion_le_20pct": 0.845,
+        "evasion_le_30pct": 0.94
+      },
+      {
+        "recall_clean": 0.9519699812382739,
+        "n_attacked": 200,
+        "evasion_final": 0.875,
+        "evasion_le_10pct": 0.53,
+        "evasion_le_20pct": 0.805,
+        "evasion_le_30pct": 0.875
+      }
+    ],
+    "C_AT_augment": [
+      {
+        "recall_clean": 0.9452157598499062,
+        "n_attacked": 200,
+        "evasion_final": 0.94,
+        "evasion_le_10pct": 0.445,
+        "evasion_le_20pct": 0.885,
+        "evasion_le_30pct": 0.94
+      },
+      {
+        "recall_clean": 0.9414634146341463,
+        "n_attacked": 200,
+        "evasion_final": 1.0,
+        "evasion_le_10pct": 0.71,
+        "evasion_le_20pct": 0.985,
+        "evasion_le_30pct": 1.0
+      },
+      {
+        "recall_clean": 0.9433395872420263,
+        "n_attacked": 200,
+        "evasion_final": 1.0,
+        "evasion_le_10pct": 0.635,
+        "evasion_le_20pct": 0.96,
+        "evasion_le_30pct": 1.0
+      }
+    ],
+    "C_A2_pairedKL": [
+      {
+        "recall_clean": 0.9530956848030019,
+        "n_attacked": 200,
+        "evasion_final": 0.8,
+        "evasion_le_10pct": 0.195,
+        "evasion_le_20pct": 0.65,
+        "evasion_le_30pct": 0.8
+      },
+      {
+        "recall_clean": 0.950844277673546,
+        "n_attacked": 200,
+        "evasion_final": 0.93,
+        "evasion_le_10pct": 0.275,
+        "evasion_le_20pct": 0.76,
+        "evasion_le_30pct": 0.93
+      },
+      {
+        "recall_clean": 0.951594746716698,
+        "n_attacked": 200,
+        "evasion_final": 0.855,
+        "evasion_le_10pct": 0.21,
+        "evasion_le_20pct": 0.63,
+        "evasion_le_30pct": 0.855
+      }
+    ],
+    "C_A4_full": [
+      {
+        "recall_clean": 0.9553470919324578,
+        "n_attacked": 200,
+        "evasion_final": 0.81,
+        "evasion_le_10pct": 0.19,
+        "evasion_le_20pct": 0.535,
+        "evasion_le_30pct": 0.81
+      },
+      {
+        "recall_clean": 0.95046904315197,
+        "n_attacked": 200,
+        "evasion_final": 0.825,
+        "evasion_le_10pct": 0.225,
+        "evasion_le_20pct": 0.54,
+        "evasion_le_30pct": 0.825
+      },
+      {
+        "recall_clean": 0.9489681050656661,
+        "n_attacked": 200,
+        "evasion_final": 0.85,
+        "evasion_le_10pct": 0.13,
+        "evasion_le_20pct": 0.505,
+        "evasion_le_30pct": 0.85
+      }
+    ],
+    "C_CANON_strip": [
+      {
+        "recall_clean": 0.9467166979362102,
+        "n_attacked": 200,
+        "evasion_final": 0.0,
+        "evasion_le_10pct": 0.0,
+        "evasion_le_20pct": 0.0,
+        "evasion_le_30pct": 0.0
+      }
+    ],
+    "C_CANON_dedup": [
+      {
+        "recall_clean": 0.9373358348968105,
+        "n_attacked": 200,
+        "evasion_final": 0.93,
+        "evasion_le_10pct": 0.735,
+        "evasion_le_20pct": 0.875,
+        "evasion_le_30pct": 0.93
+      }
+    ]
+  },
+  "aggregate": {
+    "C_B0_vanilla": {
+      "recall_clean": [
+        0.9540963101938712,
+        0.0022583452264249744
+      ],
+      "evasion_le_10pct": [
+        0.4483333333333333,
+        0.06536223850375861
+      ],
+      "evasion_le_20pct": [
+        0.8233333333333334,
+        0.016499158227686085
+      ],
+      "evasion_le_30pct": [
+        0.9,
+        0.028577380332470384
+      ],
+      "evasion_final": [
+        0.9,
+        0.028577380332470384
+      ]
+    },
+    "C_AT_augment": {
+      "recall_clean": [
+        0.9433395872420262,
+        0.0015318885195642572
+      ],
+      "evasion_le_10pct": [
+        0.5966666666666667,
+        0.11152976682881072
+      ],
+      "evasion_le_20pct": [
+        0.9433333333333334,
+        0.04249182927993986
+      ],
+      "evasion_le_30pct": [
+        0.98,
+        0.028284271247461926
+      ],
+      "evasion_final": [
+        0.98,
+        0.028284271247461926
+      ]
+    },
+    "C_A2_pairedKL": {
+      "recall_clean": [
+        0.9518449030644153,
+        0.000935999346284918
+      ],
+      "evasion_le_10pct": [
+        0.22666666666666668,
+        0.03472111109333278
+      ],
+      "evasion_le_20pct": [
+        0.68,
+        0.057154760664940824
+      ],
+      "evasion_le_30pct": [
+        0.8616666666666667,
+        0.05328122454381927
+      ],
+      "evasion_final": [
+        0.8616666666666667,
+        0.05328122454381927
+      ]
+    },
+    "C_A4_full": {
+      "recall_clean": [
+        0.951594746716698,
+        0.002723144597508092
+      ],
+      "evasion_le_10pct": [
+        0.18166666666666667,
+        0.0392286743197994
+      ],
+      "evasion_le_20pct": [
+        0.5266666666666667,
+        0.015456030825826186
+      ],
+      "evasion_le_30pct": [
+        0.8283333333333333,
+        0.01649915822768608
+      ],
+      "evasion_final": [
+        0.8283333333333333,
+        0.01649915822768608
+      ]
+    },
+    "C_CANON_strip": {
+      "recall_clean": [
+        0.9467166979362102,
+        0.0
+      ],
+      "evasion_le_10pct": [
+        0.0,
+        0.0
+      ],
+      "evasion_le_20pct": [
+        0.0,
+        0.0
+      ],
+      "evasion_le_30pct": [
+        0.0,
+        0.0
+      ],
+      "evasion_final": [
+        0.0,
+        0.0
+      ]
+    },
+    "C_CANON_dedup": {
+      "recall_clean": [
+        0.9373358348968105,
+        0.0
+      ],
+      "evasion_le_10pct": [
+        0.735,
+        0.0
+      ],
+      "evasion_le_20pct": [
+        0.875,
+        0.0
+      ],
+      "evasion_le_30pct": [
+        0.93,
+        0.0
+      ],
+      "evasion_final": [
+        0.93,
+        0.0
+      ]
+    }
+  }
+}

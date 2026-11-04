@@ -1,0 +1,79 @@
+{
+  "mode": "fine_tune",
+  "init": "A4_full_seed42",
+  "frozen": "conv_blocks",
+  "config": {
+    "epochs": 15,
+    "lr": 0.0001,
+    "max_benign": 200000,
+    "seed": 42
+  },
+  "scenarios": {
+    "CVE-2014-0160": {
+      "metrics": {
+        "accuracy": 0.947846052919309,
+        "precision": 0.03734439834024896,
+        "recall": 0.06679035250463822,
+        "f1": 0.04790419161676646,
+        "fpr": 0.034499423770400384,
+        "auc": 0.5365047262276581,
+        "auprc": 0.024292918699785716,
+        "tp": 36,
+        "fp": 928,
+        "fn": 503,
+        "tn": 25971
+      },
+      "info": {
+        "test_windows": 27438,
+        "test_malicious": 539,
+        "best_val_f1": 0.09072164948453608,
+        "tuned_threshold": 0.7000000000000001,
+        "frozen": "conv_blocks"
+      }
+    },
+    "Bruteforce_CWE-307": {
+      "metrics": {
+        "accuracy": 0.9799471198122456,
+        "precision": 0.9927175162897662,
+        "recall": 0.7461826562950159,
+        "f1": 0.8519736842105264,
+        "fpr": 0.0004588226771095781,
+        "auc": 0.8877332322808895,
+        "auprc": 0.8121301633500031,
+        "tp": 7770,
+        "fp": 57,
+        "fn": 2643,
+        "tn": 124174
+      },
+      "info": {
+        "test_windows": 134644,
+        "test_malicious": 10413,
+        "best_val_f1": 0.8173843700159489,
+        "tuned_threshold": 0.7000000000000001,
+        "frozen": "conv_blocks"
+      }
+    },
+    "CWE-89-SQL-injection": {
+      "metrics": {
+        "accuracy": 0.8372845084678366,
+        "precision": 0.2335298587856063,
+        "recall": 0.5740546865377509,
+        "f1": 0.3319996913232143,
+        "fpr": 0.142769145096197,
+        "auc": 0.7758092131458169,
+        "auprc": 0.47421148839635224,
+        "tp": 55929,
+        "fp": 183565,
+        "fn": 41499,
+        "tn": 1102182
+      },
+      "info": {
+        "test_windows": 1383175,
+        "test_malicious": 97428,
+        "best_val_f1": 0.6524390243902439,
+        "tuned_threshold": 0.5,
+        "frozen": "conv_blocks"
+      }
+    }
+  }
+}

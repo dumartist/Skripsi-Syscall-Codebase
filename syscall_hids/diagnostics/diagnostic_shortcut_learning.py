@@ -1,5 +1,5 @@
 """
-Diagnostic A1: Shortcut Learning Test (Section 4.3.9 of thesis)
+Diagnostic A1: Shortcut Learning Test
 
 Membedakan apakah recall adversarial yang tinggi pada Full Model (A4)
 berasal dari:
@@ -324,8 +324,7 @@ def main():
         discussion_points.append(
             "Gap A4 - B3 sangat kecil (< 2pp). Sebagian besar adversarial "
             "robustness berasal dari arsitektur CNN multi-skala, bukan dari "
-            "L_robust + L_contrastive. Klaim 'mimicry attacks justru meningkatkan "
-            "deteksi karena adversarial training' di Section 4.5.1 perlu di-tone-down."
+            "L_robust + L_contrastive pada evaluasi ini."
         )
     elif overall_verdict == "GENUINE_ROBUSTNESS":
         discussion_points.append(
@@ -336,17 +335,14 @@ def main():
         discussion_points.append(
             "Gap A4 - B3 berada di zona menengah (2-5pp). Adversarial training "
             "memberikan peningkatan terukur tetapi marginal. Sebagian besar robustness "
-            "berasal dari arsitektur. Narasi thesis perlu diseimbangkan: CNN multi-skala "
-            "sudah memberikan robustness operasional, dengan adversarial training menambah "
-            "margin kecil tetapi konsisten."
+            "sudah terlihat pada baseline CNN."
         )
 
     # Cek apakah ada strategi dengan verdict berbeda
     verdicts_set = {r["verdict"] for r in paired_diffs.values()}
     if len(verdicts_set) > 1:
         discussion_points.append(
-            f"Verdict berbeda antar strategi: {verdicts_set}. Periksa per-strategi "
-            f"pada Tabel 4.12 dan diskusikan kemungkinan interaksi attack-strategy x defense."
+            f"Verdict berbeda antar strategi: {verdicts_set}."
         )
 
     report = {

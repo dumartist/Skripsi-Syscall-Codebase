@@ -1,5 +1,5 @@
 """
-Diagnostic A2: Paired Robustness Evaluation (Section 4.3.10)
+Diagnostic A2: Paired Robustness Evaluation
 
 Mengganti single-population comparison (recall clean vs recall adv secara
 terpisah) dengan paired evaluation per-sampel — standar adversarial ML modern.

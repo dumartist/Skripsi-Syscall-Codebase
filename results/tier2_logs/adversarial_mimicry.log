@@ -1,0 +1,75 @@
+============================================================
+Stage 2: Adversarial Mimicry Generation
+============================================================
+
+[1/4] Loading prepared data...
+  Train malicious: 2612 windows
+  Test malicious:  2665 windows
+  Benign trigrams: 10504
+
+[2/4] Initialising strategies...
+
+[3/4] Generating adversarial windows...
+
+  --- distribution_aware ---
+    train 500/2612  (2.0s)
+    train 1000/2612  (4.0s)
+    train 1500/2612  (6.0s)
+    train 2000/2612  (8.0s)
+    train 2500/2612  (9.9s)
+    test  500/2665  (12.4s)
+    test  1000/2665  (14.5s)
+    test  1500/2665  (16.5s)
+    test  2000/2665  (18.5s)
+    test  2500/2665  (20.5s)
+    Done in 21.1s
+    Train injection: 30.0%  (len 100 -> 130)
+    Test injection:  30.0%
+    JSD sample (train): 0.6557 -> 0.6315
+
+  --- random ---
+    train 500/2612  (0.0s)
+    train 1000/2612  (0.1s)
+    train 1500/2612  (0.1s)
+    train 2000/2612  (0.1s)
+    train 2500/2612  (0.2s)
+    test  500/2665  (0.2s)
+    test  1000/2665  (0.3s)
+    test  1500/2665  (0.3s)
+    test  2000/2665  (0.4s)
+    test  2500/2665  (0.4s)
+    Done in 0.4s
+    Train injection: 30.0%  (len 100 -> 130)
+    Test injection:  30.0%
+    JSD sample (train): 0.6557 -> 0.6644
+
+  --- position_aware ---
+    train 500/2612  (0.1s)
+    train 1000/2612  (0.3s)
+    train 1500/2612  (0.4s)
+    train 2000/2612  (0.5s)
+    train 2500/2612  (0.7s)
+    test  500/2665  (0.8s)
+    test  1000/2665  (1.0s)
+    test  1500/2665  (1.1s)
+    test  2000/2665  (1.2s)
+    test  2500/2665  (1.4s)
+    Done in 1.4s
+    Train injection: 30.0%  (len 100 -> 130)
+    Test injection:  30.0%
+    JSD sample (train): 0.6557 -> 0.6612
+
+[4/4] Saving...
+
+  Saved to adversarial_data/
+    distribution_aware_train.npz  (2612, 130)
+    distribution_aware_test.npz   (2665, 130)
+    random_train.npz  (2612, 130)
+    random_test.npz   (2665, 130)
+    position_aware_train.npz  (2612, 130)
+    position_aware_test.npz   (2665, 130)
+    metadata.json
+
+============================================================
+Stage 2 complete. Next: robust_encoder.py (Stage 3)
+============================================================

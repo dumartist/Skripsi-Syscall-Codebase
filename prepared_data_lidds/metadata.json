@@ -1,0 +1,79 @@
+{
+  "window_size": 100,
+  "stride": 50,
+  "vocab_size": 69,
+  "partition_map": {
+    "training": 0,
+    "validation": 1,
+    "test/normal": 2,
+    "test/normal_and_attack": 3
+  },
+  "scenarios": {
+    "CVE-2014-0160": {
+      "total_windows": 37459,
+      "total_malicious": 1063,
+      "by_partition": {
+        "training": {
+          "windows": 7255,
+          "malicious": 0
+        },
+        "validation": {
+          "windows": 1857,
+          "malicious": 0
+        },
+        "test/normal": {
+          "windows": 26471,
+          "malicious": 0
+        },
+        "test/normal_and_attack": {
+          "windows": 1876,
+          "malicious": 1063
+        }
+      }
+    },
+    "Bruteforce_CWE-307": {
+      "total_windows": 188741,
+      "total_malicious": 20766,
+      "by_partition": {
+        "training": {
+          "windows": 33099,
+          "malicious": 0
+        },
+        "validation": {
+          "windows": 8509,
+          "malicious": 0
+        },
+        "test/normal": {
+          "windows": 122121,
+          "malicious": 0
+        },
+        "test/normal_and_attack": {
+          "windows": 25012,
+          "malicious": 20766
+        }
+      }
+    },
+    "CWE-89-SQL-injection": {
+      "total_windows": 1924028,
+      "total_malicious": 187954,
+      "by_partition": {
+        "training": {
+          "windows": 336569,
+          "malicious": 0
+        },
+        "validation": {
+          "windows": 90066,
+          "malicious": 0
+        },
+        "test/normal": {
+          "windows": 1255651,
+          "malicious": 0
+        },
+        "test/normal_and_attack": {
+          "windows": 241742,
+          "malicious": 187954
+        }
+      }
+    }
+  }
+}

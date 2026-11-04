@@ -1,5 +1,5 @@
 """
-D1: Injection Ratio Sweep (Section 4.2.4 / 4.3.x)
+D1: Injection Ratio Sweep
 
 Menutup kritik "kenapa hanya uji budget injeksi 30%?". Tanpa latih ulang —
 membangkitkan adversarial test set Distribution-Aware pada beberapa budget
@@ -150,7 +150,7 @@ def main():
               f"(margin={a4_recall-b3_recall:+.4f}) | "
               f"FPRben B3={b3_fpr:.4f} A4={a4_fpr:.4f}")
 
-    # --- Tabel ringkas (format review user) ---
+    # --- Tabel ringkas ---
     print("\n" + "=" * 74)
     print("TABEL SWEEP (Distribution-Aware):")
     hdr = "  {:<26}" + "".join(f"{int(r*100):>9}%" for r in RATIOS)

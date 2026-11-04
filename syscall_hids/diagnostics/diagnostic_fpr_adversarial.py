@@ -1,8 +1,8 @@
 """
-Diagnostic A3: FPR pada Kondisi Adversarial (Section 4.3.11)
+Diagnostic A3: FPR pada Kondisi Adversarial
 
 Menutup lubang fundamental: FPR tidak terdefinisi pada himpunan adversarial
-yang 100% malicious (Tabel 4.3). Untuk mengukur FPR adversarial, perturbasi
+yang 100% malicious. Untuk mengukur FPR adversarial, perturbasi
 no-op diterapkan pada sampel BENIGN.
 
 Justifikasi semantik: penyisipan syscall no-op TIDAK boleh mengubah kelas

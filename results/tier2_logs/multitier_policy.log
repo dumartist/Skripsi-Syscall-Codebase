@@ -1,0 +1,29 @@
+======================================================================
+Section 4.4.2: Multi-Tier Action Mapping (B1)
+Device: cuda | Model: A4_full
+======================================================================
+
+Validation: 1317 (425 mal, 179 traces) | Test: 38345 (2665 mal) | attack prior = 0.0695
+
+Profile           tau1  tau2  tau3  MT-cost  ST-cost cost_red    ABR    FPR
+----------------------------------------------------------------------------
+Balanced          0.15  0.60  0.75    2.287    2.892    20.9%  0.914  0.123
+Low-Disruption    0.15  0.65  0.75    4.156    4.786    13.2%  0.903  0.115
+Zero-Tolerance    0.15  0.50  0.75    2.555    3.491    26.8%  0.937  0.146
+
+Confusion Matrix 4x2 (Balanced, test set):
+  Action          Benign  Malicious
+  Normal           18682         17
+  Alert            12604        213
+  Quarantine         968        144
+  Terminate         3426       2291
+
+Prevalence sensitivity (cost reduction MT vs ST, tuned+reported at prior):
+    prior        Balanced  Low-Disruption  Zero-Tolerance
+   0.0100            0.3%           10.9%            9.6%
+   0.0695           20.9%           13.2%           26.8%
+   0.2000           30.6%           24.8%           31.2%
+   0.5000           23.9%           29.3%           48.3%
+
+  Saved: results/multitier_policy_report.json
+======================================================================

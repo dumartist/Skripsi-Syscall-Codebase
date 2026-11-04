@@ -1,5 +1,5 @@
 """
-Section 4.4.5: Analisis Latensi dan Feasibilitas Real-time (B2)
+Analisis Latensi dan Feasibilitas Real-time (B2)
 
 Memprofil latensi inference per komponen pipeline pada CPU dan GPU,
 menghitung throughput (window/detik), dan membandingkannya dengan syscall
@@ -10,7 +10,6 @@ Komponen: forward pass (embedding+conv+fc+classifier), risk computation
 (softmax), policy decision (digitize). Tokenisasi diukur sebagai dict lookup.
 
 Output: results/latency_report.json
-Thesis : Tabel 4.20.
 """
 
 import json
@@ -113,7 +112,7 @@ def profile_device(model, dev, sample_window):
 def main():
     torch.manual_seed(SEED); np.random.seed(SEED)
     print("=" * 70)
-    print("Section 4.4.5: Latency & Real-time Feasibility (B2)")
+    print("Latency & Real-time Feasibility (B2)")
     print("=" * 70)
 
     model = C.load_adfa_model("A4_full", SEED, "cpu")

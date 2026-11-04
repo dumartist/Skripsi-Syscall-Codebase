@@ -1,0 +1,34 @@
+
+== §4.9 static recall vs B0 (paired, 10 seeds, Holm) ==
+  C_A2_pairedKL_vs_B0__distribution_aware    diff=+1.35pp CI=[+0.68,+2.02] dz=+1.45 p_holm=0.0053
+  C_A2_pairedKL_vs_B0__random                diff=+0.21pp CI=[-0.02,+0.43] dz=+0.65 p_holm=0.139
+  C_A2_pairedKL_vs_B0__position_aware        diff=+0.05pp CI=[-0.22,+0.33] dz=+0.14 p_holm=0.676
+  C_A4_full_vs_B0__distribution_aware        diff=+1.15pp CI=[+0.44,+1.86] dz=+1.16 p_holm=0.0155
+  C_A4_full_vs_B0__random                    diff=-1.86pp CI=[-2.20,-1.53] dz=-3.97 p_holm=3.16e-06
+  C_A4_full_vs_B0__position_aware            diff=-0.99pp CI=[-1.32,-0.67] dz=-2.17 p_holm=0.000369
+
+== §4.10 paired robustness (DA, seed 42) ==
+  windows=2665 traces=390
+  C_B0_vanilla       RR=0.9726 missed->recovered 179->10 (5.6%)
+  C_A2_pairedKL      RR=0.9988 missed->recovered 168->18 (10.7%)
+  C_A3_contrastive   RR=0.9775 missed->recovered 180->5 (2.8%)
+  C_A4_full          RR=0.9976 missed->recovered 167->7 (4.2%)
+
+== §4.11 benign FPR: clean / +no-op 5,10,30% / +benign-token 30% (control) ==
+  C_B0_vanilla       0.161 / 0.197 0.234 0.491 / ctrl 0.134  inc_noop=+33.0pp inc_ctrl=-2.8pp
+  C_B0_sym           0.152 / 0.153 0.154 0.157 / ctrl 0.121  inc_noop=+0.5pp inc_ctrl=-3.1pp
+  C_AT_augment       0.139 / 0.163 0.186 0.347 / ctrl 0.095  inc_noop=+20.8pp inc_ctrl=-4.4pp
+  C_A2_pairedKL      0.160 / 0.194 0.232 0.495 / ctrl 0.132  inc_noop=+33.5pp inc_ctrl=-2.8pp
+  C_A3_contrastive   0.157 / 0.174 0.189 0.269 / ctrl 0.126  inc_noop=+11.2pp inc_ctrl=-3.1pp
+  C_A4_full          0.158 / 0.174 0.190 0.266 / ctrl 0.126  inc_noop=+10.8pp inc_ctrl=-3.3pp
+
+== §4.12 adaptive evasion vs B0 (paired on common traces, Holm) ==
+  C_B0_sym_vs_B0__evasion_le_10pct             diff=-2.1pp CI=[-6.7,+2.4] p_holm=0.635
+  C_AT_augment_vs_B0__evasion_le_10pct         diff=+14.7pp CI=[+6.9,+22.4] p_holm=0.0222
+  C_A2_pairedKL_vs_B0__evasion_le_10pct        diff=-7.4pp CI=[-11.2,-3.6] p_holm=0.0205
+  C_A3_contrastive_vs_B0__evasion_le_10pct     diff=+3.4pp CI=[-2.0,+8.7] p_holm=0.566
+  C_A4_full_vs_B0__evasion_le_10pct            diff=-6.2pp CI=[-10.0,-2.4] p_holm=0.0458
+  C_CANON_dedup_vs_B0__evasion_le_10pct        diff=+28.1pp CI=[+24.0,+32.3] p_holm=1.84e-06
+  C_CANON_strip_vs_B0__evasion_le_10pct        diff=-45.5pp CI=[-48.9,-42.1] p_holm=4.37e-09
+
+Saved: results/corrected_analysis.json

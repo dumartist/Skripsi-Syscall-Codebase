@@ -1,0 +1,84 @@
+============================================================
+Stage 4: Detection-to-Prevention Framework
+Device: cuda
+============================================================
+
+[1/5] Loading model and data...
+  Loaded model from epoch 22 (F1=0.9307)
+
+[2/5] Running inference...
+  Clean test: 38345 samples
+  Adversarial (distribution_aware): 2665 samples
+  Adversarial (random): 2665 samples
+  Adversarial (position_aware): 2665 samples
+
+[3/5] Threshold sweep (clean test)...
+  Validation (threshold selection): 1317 windows, 179 traces
+
+  Optimal thresholds by cost of false prevention:
+   C_fp  Threshold     ABR     FPR      F1        U
+  --------------------------------------------------
+      1       0.58  0.9205  0.1306  0.5018   0.7899
+      2       0.59  0.9163  0.1285  0.5039   0.6593
+      5       0.67  0.8976  0.1112  0.5301   0.3416
+      7       0.71  0.8743  0.1041  0.5351   0.1457
+     10       0.71  0.8743  0.1041  0.5351  -0.1666
+     20       0.71  0.8743  0.1041  0.5351  -1.2075
+
+[4/5] Adversarial ABR at key thresholds...
+
+  Threshold  distribution        random  position_awa
+  ---------------------------------------------------
+       0.30        0.9831        0.9921        0.9914
+       0.40        0.9602        0.9741        0.9794
+       0.50        0.9377        0.9467        0.9651
+       0.60        0.9129        0.9197        0.9362
+       0.70        0.8795        0.8856        0.9103
+       0.80        0.8300        0.8188        0.8664
+       0.90        0.7452        0.6293        0.7400
+
+[5/5] Per-category prevention metrics (clean test, threshold=0.50)...
+
+  Category                   Count  --- threshold=0.50 ---  --- threshold=0.67 ---
+                                       ABR     FPR      F1     ABR     FPR      F1
+  --------------------------------------------------------------------------------
+  benign                     35680  0.0000  0.1456  0.0000  0.0000  0.1112  0.0000
+  Adduser                      362  0.7459  0.0000  0.8544  0.6934  0.0000  0.8189
+  Hydra_FTP                    399  0.9925  0.0000  0.9962  0.9699  0.0000  0.9847
+  Hydra_SSH                    532  0.9643  0.0000  0.9818  0.9323  0.0000  0.9650
+  Java_Meterpreter             548  0.9599  0.0000  0.9795  0.9288  0.0000  0.9631
+  Meterpreter                  296  0.9561  0.0000  0.9775  0.9189  0.0000  0.9577
+  Web_Shell                    528  0.9659  0.0000  0.9827  0.9034  0.0000  0.9493
+
+  Per-category ABR under Distribution-Aware mimicry (threshold=0.50):
+    Adduser                    ABR=0.7597  (275/362 blocked)
+    Hydra_FTP                  ABR=0.9900  (395/399 blocked)
+    Hydra_SSH                  ABR=0.9568  (509/532 blocked)
+    Java_Meterpreter           ABR=0.9599  (526/548 blocked)
+    Meterpreter                ABR=0.9561  (283/296 blocked)
+    Web_Shell                  ABR=0.9678  (511/528 blocked)
+
+============================================================
+Stage 4 complete.
+============================================================
+
+  Saved: results/prevention_report.json
+  Saved: results/prevention_curves.json
+
+  === PREVENTION SUMMARY ===
+
+  At default threshold (0.50):
+    ABR  = 0.9373 (93.7% attacks blocked)
+    FPR  = 0.1456 (14.6% benign disrupted)
+    F1   = 0.4823
+
+  At optimal threshold for C_fp=5 (threshold=0.67):
+    ABR  = 0.8976 (89.8% attacks blocked)
+    FPR  = 0.1112 (11.1% benign disrupted)
+    F1   = 0.5301
+    U(5) = 0.3416
+
+  Adversarial ABR (Distribution-Aware, threshold=0.50):
+    ABR  = 0.9377 (93.8% mimicry attacks blocked)
+
+============================================================

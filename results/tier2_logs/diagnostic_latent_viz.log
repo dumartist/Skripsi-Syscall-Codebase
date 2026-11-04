@@ -1,0 +1,22 @@
+========================================================================
+Diagnostic #2b: Latent t-SNE + analisis geometris shortcut
+Device: cuda | 600/populasi
+========================================================================
+
+[B3_vanilla_cnn] extracting latents + t-SNE...
+  d(benign_clean -> mal)     = 5.126
+  d(benign_artifact -> mal)  = 3.467
+  shift_ratio                = 0.676
+  -> benign+artifact LEBIH DEKAT ke malicious (shortcut geometris terkonfirmasi)
+  PNG: docs\figures\latent_tsne_B3_vanilla_cnn.png
+
+[A4_full] extracting latents + t-SNE...
+  d(benign_clean -> mal)     = 4.721
+  d(benign_artifact -> mal)  = 4.044
+  shift_ratio                = 0.857
+  -> benign+artifact LEBIH DEKAT ke malicious (shortcut geometris terkonfirmasi)
+  PNG: docs\figures\latent_tsne_A4_full.png
+
+Saved: results\diagnostic_latent_viz.json
+[1] B3_vanilla_cnn: shift_ratio=0.676 (benign+artifact LEBIH DEKAT ke malicious (shortcut geometris terkonfirmasi)).
+[2] A4_full: shift_ratio=0.857 (benign+artifact LEBIH DEKAT ke malicious (shortcut geometris terkonfirmasi)).

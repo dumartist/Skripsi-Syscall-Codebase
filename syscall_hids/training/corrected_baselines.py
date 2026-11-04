@@ -1,4 +1,4 @@
-"""Corrected B1 (n-gram+RF) and B2 (LSTM) for Tabel 4.7 — on the regenerated
+"""Corrected B1 (n-gram+RF) and B2 (LSTM) — on the regenerated
 adversarial data, and (B2) with validation-split checkpoint selection.
 Output: results/corrected_baselines.json"""
 import json

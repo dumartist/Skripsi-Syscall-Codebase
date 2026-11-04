@@ -1,0 +1,15 @@
+Generating figures into docs\figures
+  -> docs\figures\fig_3_1_arsitektur_model.png
+  -> docs\figures\fig_4_1_pipeline_deployment.png
+  -> docs\figures\fig_4_recall_comparison.png
+  -> docs\figures\fig_4_D1_injection_sweep.png
+  -> docs\figures\fig_4_adaptive_collapse.png
+  -> docs\figures\fig_4_E4_artifact_flip.png
+  -> docs\figures\fig_4_prevention_abr_curve.png
+  -> docs\figures\fig_3_1_system_arch.png
+  -> docs\figures\fig_3_2_mimikri_alur.png
+  -> docs\figures\fig_4_4_adaptive_alur.png
+  -> docs\figures\fig_G_roc.png
+  -> docs\figures\fig_G_pr.png
+  -> docs\figures\fig_G_confusion.png
+Done.

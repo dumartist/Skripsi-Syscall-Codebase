@@ -1,0 +1,23 @@
+================================================================
+LID-DS Step 2b: Vocabulary Alignment (Mode B)
+================================================================
+
+Total syscall LID-DS       : 67
+ADFA vocab size            : 152
+
+Kategori                Jumlah   Persen
+----------------------------------------
+Direct (1:1)                51    76.1%
+Socket -> 102               10    14.9%
+IPC -> 117                   1     1.5%
+ABI_UNMAPPED                 5     7.5%
+
+Socket-collapsed (10): accept, connect, getpeername, getsockname, getsockopt, recvfrom, sendto, setsockopt, shutdown, socket
+IPC-collapsed (1): semop
+ABI_UNMAPPED (5): epoll_create1, io_getevents, io_submit, procexit, pwrite
+
+Coverage: 62/67 ter-map ke ruang token ADFA (92.5%), 5 unmapped
+================================================================
+
+Saved: prepared_data_lidds/vocabulary_aligned.json
+Saved: prepared_data_lidds/alignment_stats.json  (-> Tabel 4.22)

@@ -1,0 +1,23 @@
+== Thesis Tabel 4.7/4.8 vs authoritative corrected_full.json ==
+  [FAIL] B0 clean recall: json=0.9511 thesis=0.9555 (|d|=0.0044)
+  [FAIL] B0 clean FPR: json=0.1588 thesis=0.1565 (|d|=0.0023)
+  [FAIL] B0 clean F1: json=0.4669 thesis=0.4719 (|d|=0.0050)
+  [FAIL] B0 AdvRec_DA: json=0.9435 thesis=0.9420 (|d|=0.0015)
+  [FAIL] A4 clean recall: json=0.9510 thesis=0.9531 (|d|=0.0021)
+  [OK ] A4 clean FPR: json=0.1563 thesis=0.1569 (|d|=0.0006)
+  [FAIL] A4 AdvRec_DA: json=0.9549 thesis=0.9573 (|d|=0.0024)
+  [FAIL] A2 AdvRec_DA: json=0.9570 thesis=0.9593 (|d|=0.0023)
+
+== Thesis Tabel 4.12 adaptive vs adaptive_full.json ==
+  [FAIL] B0 evasion <=10%: json=0.4550 thesis=0.4300 (|d|=0.0250)
+  [FAIL] A4 evasion <=10%: json=0.3930 thesis=0.1800 (|d|=0.2130)
+  [FAIL] A2 evasion <=10%: json=0.3810 thesis=0.2000 (|d|=0.1810)
+  [OK ] CANON-strip <=30%: json=0.0000 thesis=0.0000 (|d|=0.0000)
+
+== Figure source (full_comparison_report.json) == authoritative run ==
+  [OK ] full_comparison B0 recall == corrected_full: json=0.9511 thesis=0.9511 (|d|=0.0000)
+  [OK ] full_comparison A4 DA == corrected_full: json=0.9549 thesis=0.9549 (|d|=0.0000)
+
+  full_comparison provenance: 'corrected_pipeline.py 10-seed run (AUTHORITATIVE)'
+
+INCONSISTENCIES: ['B0 clean recall', 'B0 clean FPR', 'B0 clean F1', 'B0 AdvRec_DA', 'A4 clean recall', 'A4 AdvRec_DA', 'A2 AdvRec_DA', 'B0 evasion <=10%', 'A4 evasion <=10%', 'A2 evasion <=10%']

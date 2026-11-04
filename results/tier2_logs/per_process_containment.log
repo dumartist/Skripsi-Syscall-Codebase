@@ -1,0 +1,27 @@
+======================================================================
+Section 4.4.3 + 4.4.6: Per-Process Aggregation (B5) & Containment (B3)
+Device: cuda
+======================================================================
+
+Proses uji: 4762 (4372 benign, 390 attack)
+
+[B5] Per-Process Aggregation (threshold=0.50):
+  Granularity                ABR     FPR
+  --------------------------------------
+  Per-Window              0.9373  0.1456
+  Per-Process (max)       0.9231  0.1606
+  Per-Process (mean)      0.9026  0.1066
+  Isolated FP benign diselamatkan mean-agg: 236
+
+[B3] Containment Score per Kategori (N=10 segmen, threshold=0.50):
+  Kategori                Mean  Median  C>=0.8   C=0    n
+  -------------------------------------------------------
+  Adduser                0.755   1.000      38    11   51
+  Hydra_FTP              0.852   1.000      67     5   81
+  Hydra_SSH              0.781   1.000      59     2   89
+  Java_Meterpreter       0.917   1.000      59     4   65
+  Meterpreter            0.808   1.000      30     4   39
+  Web_Shell              0.860   1.000      54     5   65
+
+  Saved: results/per_process_report.json, containment_report.json
+======================================================================

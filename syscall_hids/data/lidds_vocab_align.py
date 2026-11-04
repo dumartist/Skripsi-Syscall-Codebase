@@ -17,12 +17,12 @@ Strategi alignment vocabulary:
     <ABI_UNMAPPED>.
   - Saat membangun tensor untuk model ADFA (zero-shot), <ABI_UNMAPPED>
     dikolaps ke <UNK>=1 karena embedding ADFA tidak punya baris untuknya;
-    namun dilacak terpisah untuk analisis (Tabel 4.22).
+    namun dilacak terpisah untuk analisis.
 
 Output:
   prepared_data_lidds/vocabulary_aligned.json
       lidds_name -> {adfa_token, adfa_number, kind, model_input_token}
-  prepared_data_lidds/alignment_stats.json   (untuk Tabel 4.22 thesis)
+  prepared_data_lidds/alignment_stats.json
 """
 
 import json
@@ -124,7 +124,7 @@ def main():
         }
         stats[kind].append(name)
 
-    # Statistik untuk Tabel 4.22
+    # Statistik cakupan pemetaan
     n_total = len(aligned)
     summary = {
         "lidds_syscalls_total": n_total,
@@ -169,7 +169,7 @@ def main():
           f"({100*mapped/n_total:.1f}%), {len(stats['abi_unmapped'])} unmapped")
     print("=" * 64)
     print(f"\nSaved: {OUTPUT_DIR}/vocabulary_aligned.json")
-    print(f"Saved: {OUTPUT_DIR}/alignment_stats.json  (-> Tabel 4.22)")
+    print(f"Saved: {OUTPUT_DIR}/alignment_stats.json")
 
 
 if __name__ == "__main__":
